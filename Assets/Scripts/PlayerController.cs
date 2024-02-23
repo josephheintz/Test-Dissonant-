@@ -23,10 +23,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
 
 
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashTime;
+    [SerializeField] private float dashCooldown;
+
+
     PlayerStateList pState;
     private Rigidbody2D rb;
     private float xAxis;
+    private float gravity;
     Animator anim;
+    private bool canDash = true;
+    private bool dashed;
 
 
     public static PlayerController Instance;
@@ -53,6 +61,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         anim = GetComponent<Animator>();
+
+        gravity = rb.gravityScale;
     }
 
     // Update is called once per frame
@@ -60,9 +70,12 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         UpdateJumpVar();
+
+        if (pState.dashing) return;
         Flip();
         Move();
         Jump();
+        StartDash();
     }
 
     void GetInput()
@@ -86,6 +99,34 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(xAxis * walkSpeed, rb.velocity.y);
         anim.SetBool("Running", rb.velocity.x != 0 && IsGrounded());
+    }
+
+    void StartDash()
+    {
+        if (canDash && Input.GetButtonDown("Dash") && !dashed)
+        {
+            StartCoroutine(Dash());
+            dashed = true;
+        }
+
+        if (IsGrounded())
+        {
+            dashed = false;
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        canDash = false;
+        pState.dashing = true;
+        anim.SetTrigger("Dashing");
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = gravity;
+        pState.dashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     public bool IsGrounded()
@@ -130,6 +171,7 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetBool("Jumping", !IsGrounded());
+        anim.SetBool("Falling", rb.velocity.y < 0);
     }
 
     void UpdateJumpVar()
@@ -153,5 +195,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpBufferCounter--;
         }
+
     }
 }
