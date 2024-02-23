@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Horizontal Movement Settings")]
+    [Header("Horizontal Movement Settings:")]
     [SerializeField] private float walkSpeed = 1;
 
-    [Header("Ground Check Settings")]
-    [SerializeField] private float jumpForce = 45;
+    [Header("Vertical Movement Settings:")]
+    [SerializeField] private float jumpForce = 45f;
+    private int jumpBufferCounter = 0;
+    [SerializeField] private int jumpBufferFrames;
+    private float coyoteTimeCounter = 0;
+    [SerializeField] private float coyoteTime;
+    private int airJumpCounter = 0;
+    [SerializeField] private int maxAirJumps;
+
+    [Header("Ground Check Settings:")]
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private float groundCheckY = 0.2f;
     [SerializeField] private float groundCheckX = 0.5f;
@@ -103,11 +111,22 @@ public class PlayerController : MonoBehaviour
             pState.jumping = false;
         }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (!pState.jumping)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-            pState.jumping = true;
+                pState.jumping = true;
+            }
+            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+            {
+                pState.jumping = true;
+
+                airJumpCounter++;
+
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
         }
 
         anim.SetBool("Jumping", !IsGrounded());
@@ -118,6 +137,21 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded())
         {
             pState.jumping = false;
+            coyoteTimeCounter = coyoteTime;
+            airJumpCounter = 0;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferFrames;
+        }
+        else
+        {
+            jumpBufferCounter--;
         }
     }
 }

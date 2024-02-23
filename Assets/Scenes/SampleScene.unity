@@ -299,6 +299,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   jumpForce: 20
+  jumpBufferFrames: 8
+  coyoteTime: 0.1
+  maxAirJumps: 1
   groundCheckPoint: {fileID: 1771954855}
   groundCheckY: 0.2
   groundCheckX: 0.5
@@ -457,7 +460,7 @@ GameObject:
   - component: {fileID: 732322034}
   - component: {fileID: 732322033}
   - component: {fileID: 732322032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
