@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Horizontal Movement Settings:")]
     [SerializeField] private float walkSpeed = 1;
+    [Space(5)]
+
 
     [Header("Vertical Movement Settings:")]
     [SerializeField] private float jumpForce = 45f;
@@ -15,18 +17,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float coyoteTime;
     private int airJumpCounter = 0;
     [SerializeField] private int maxAirJumps;
+    [Space(5)]
+
 
     [Header("Ground Check Settings:")]
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private float groundCheckY = 0.2f;
     [SerializeField] private float groundCheckX = 0.5f;
     [SerializeField] private LayerMask whatIsGround;
+    [Space(5)]
 
 
+    [Header("Dash Settings:")]
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldown;
+    [Space(5)]
 
+
+    [Header("Attack Settings:")]
+    bool attacking = false;
+    float timeBetweenAttack, timeSinceAttack;
+    [Space(5)]
 
     PlayerStateList pState;
     private Rigidbody2D rb;
@@ -76,11 +88,13 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
         StartDash();
+        Attack();
     }
 
     void GetInput()
     {
         xAxis = Input.GetAxisRaw("Horizontal");
+        attacking = Input.GetMouseButtonDown(0);
     }
 
     void Flip()
@@ -127,6 +141,16 @@ public class PlayerController : MonoBehaviour
         pState.dashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    void Attack()
+    {
+        timeSinceAttack += Time.deltaTime;
+        if (attacking && timeSinceAttack >= timeBetweenAttack)
+        {
+            timeSinceAttack = 0;
+            anim.SetTrigger("Attacking");
+        }
     }
 
     public bool IsGrounded()
