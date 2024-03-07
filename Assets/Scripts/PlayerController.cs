@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
-        health = maxHealth;
+        Health = maxHealth;
     }
 
 
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
-        attacking = Input.GetMouseButtonDown(0);
+        attacking = Input.GetButtonDown("Attack");
     }
 
     void Flip()
@@ -322,7 +322,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        health -= Mathf.RoundToInt(_damage);
+        Health -= Mathf.RoundToInt(_damage);
         StartCoroutine(StopTakingDamage());
     }
 
@@ -330,13 +330,19 @@ public class PlayerController : MonoBehaviour
     {
         pState.invincible = true;
         anim.SetTrigger("TakeDamage");
-        ClampHealth();
         yield return new WaitForSeconds(1f);
         pState.invincible = false;
     }
-    void ClampHealth()
+    public int Health
     {
-        health = Mathf.Clamp(health, 0, maxHealth);
+        get { return health; }
+        set
+        {
+            if(health != value)
+            {
+                health = Mathf.Clamp(value, 0, maxHealth);
+            }
+        }
     }
 
     public bool IsGrounded()
