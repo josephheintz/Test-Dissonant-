@@ -984,6 +984,7 @@ MonoBehaviour:
   Player: {fileID: 308010446}
   Managers: {fileID: 2119505232}
   Inventory: {fileID: 0}
+  Camera: {fileID: 0}
 --- !u!4 &1332862691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 358851925296037865, guid: 853ed44b9fc7c4debac273af13c6c040, type: 3}
