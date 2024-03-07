@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float coyoteTime;
     private int airJumpCounter = 0;
     [SerializeField] private int maxAirJumps;
+    [SerializeField] private bool doubleJump = false;
 
     [Header("Ground Check Settings:")]
     [SerializeField] private Transform groundCheckPoint;
@@ -160,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
                 pState.jumping = true;
             }
-            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && doubleJump == true)
             {
                 pState.jumping = true;
 
