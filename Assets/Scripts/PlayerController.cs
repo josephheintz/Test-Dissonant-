@@ -5,87 +5,37 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Horizontal Movement Settings:")]
-    [SerializeField] private float walkSpeed = 1; //Sets player's movement speed
-    [Space(5)]
-
+    [SerializeField] private float walkSpeed = 1;
 
     [Header("Vertical Movement Settings:")]
-    [SerializeField] private float jumpForce = 45f; //How high the player jumps
-
-    private int jumpBufferCounter = 0; //Stores the number of frames the player can buffer a jump
-    [SerializeField] private int jumpBufferFrames; //Max amount of frames the player can buffer a jump
-
-    private float coyoteTimeCounter = 0; //Stores the isGrounded() bool
-    [SerializeField] private float coyoteTime; //Max amount of time/frames the player can jump after leaving the ground
-
-    private int airJumpCounter = 0; //Keeps track of how many air jumps the player has done
-    [SerializeField] private int maxAirJumps; //Max amount of air jumps
-
-    private float gravity; //Stores the gravity scale of the player at start
-    [Space(5)]
-
+    [SerializeField] private float jumpForce = 45f;
+    private int jumpBufferCounter = 0;
+    [SerializeField] private int jumpBufferFrames;
+    private float coyoteTimeCounter = 0;
+    [SerializeField] private float coyoteTime;
+    private int airJumpCounter = 0;
+    [SerializeField] private int maxAirJumps;
+    [SerializeField] private bool doubleJump = false;
 
     [Header("Ground Check Settings:")]
-    [SerializeField] private Transform groundCheckPoint; //Point at which ground is checked
-    [SerializeField] private float groundCheckY = 0.2f; //Distance from the center of the player to the bottom of the ground 
-    [SerializeField] private float groundCheckX = 0.5f; //Distance from the center of the player to the edge of the ground CP
-    [SerializeField] private LayerMask whatIsGround; //Sets the ground layer
-    [Space(5)]
+    [SerializeField] private Transform groundCheckPoint;
+    [SerializeField] private float groundCheckY = 0.2f;
+    [SerializeField] private float groundCheckX = 0.5f;
+    [SerializeField] private LayerMask whatIsGround;
 
 
-    [Header("Dash Settings:")]
-    [SerializeField] private float dashSpeed; //Speed of the dash
-    [SerializeField] private float dashTime; //Amount of time dashing
-    [SerializeField] private float dashCooldown; //Amount of time between dashes (cooldown)
-    private bool canDash = true, dashed;
-    [Space(5)]
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashTime;
+    [SerializeField] private float dashCooldown;
 
 
-    [Header("Attack Settings:")]
-    [SerializeField] private Transform SideAttackTransform; //The middle of the attack area
-    [SerializeField] private Vector2 SideAttackArea; //The size of the attack area
-
-    [SerializeField] private Transform UpAttackTransform;
-    [SerializeField] private Vector2 UpAttackArea;
-
-    [SerializeField] private Transform DownAttackTransform;
-    [SerializeField] private Vector2 DownAttackArea;
-
-    [SerializeField] private LayerMask attackableLayer; //The layer the player can attack and recoil off of
-
-    private float timeBetweenAttack, timeSinceAttack;
-
-    [SerializeField] private float damage; //Damage player does to an enemy
-
-    [SerializeField] private GameObject slashEffect; //Effect of the slash
-    [Space(5)]
-
-
-    [Header("Recoil Settings:")]
-    [SerializeField] private int recoilXSteps = 5; //How many FixedUpdates() the player recoils horizontally for
-    [SerializeField] private int recoilYSteps = 5; //How many FixedUpdates() the player recoils horizontally for
-
-    [SerializeField] private float recoilXSpeed = 100; //Speed of horizontal recoil
-    [SerializeField] private float recoilYSpeed = 100; //Speed of vertical recoil
-
-    private int stepsXRecoiled, stepsYRecoiled; //Number of steps recoiled horizontally and vertically
-    [Space(5)]
-
-
-    [Header("Health Settings:")]
-    public int health; //Player's current health
-    public int maxHealth; //Player's max health
-    [Space(5)]
-
-
-    [HideInInspector] public PlayerStateList pState;
-    private Animator anim;
+    PlayerStateList pState;
     private Rigidbody2D rb;
-
-
-    //Input Variables
-    private float xAxis, yAxis;
-    private bool attacking = false;
+    private float xAxis;
+    private float gravity;
+    Animator anim;
+    private bool canDash = true;
+    private bool dashed;
 
 
     public static PlayerController Instance;
@@ -101,7 +51,6 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
-        health = maxHealth;
     }
 
 
@@ -117,14 +66,6 @@ public class PlayerController : MonoBehaviour
         gravity = rb.gravityScale;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(SideAttackTransform.position, SideAttackArea);
-        Gizmos.DrawWireCube(UpAttackTransform.position, UpAttackArea);
-        Gizmos.DrawWireCube(DownAttackTransform.position, DownAttackArea);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -136,20 +77,11 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
         StartDash();
-        Attack();
-    }
-
-    private void FixedUpdate()
-    {
-        if (pState.dashing) return;
-        Recoil();
     }
 
     void GetInput()
     {
         xAxis = Input.GetAxisRaw("Horizontal");
-        yAxis = Input.GetAxisRaw("Vertical");
-        attacking = Input.GetMouseButtonDown(0);
     }
 
     void Flip()
@@ -157,12 +89,10 @@ public class PlayerController : MonoBehaviour
         if (xAxis < 0)
         {
             transform.localScale = new Vector2(-4, transform.localScale.y);
-            pState.lookingRight = false;
         }
         else if (xAxis > 0)
         {
             transform.localScale = new Vector2(4, transform.localScale.y);
-            pState.lookingRight = true;
         }
     }
 
@@ -200,145 +130,6 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
-    void Attack()
-    {
-        timeSinceAttack += Time.deltaTime;
-        if (attacking && timeSinceAttack >= timeBetweenAttack)
-        {
-            timeSinceAttack = 0;
-            anim.SetTrigger("Attacking");
-
-            if (yAxis == 0 || yAxis < 0 && IsGrounded())
-            {
-                Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
-                Instantiate(slashEffect, SideAttackTransform);
-                
-            }
-            else if (yAxis > 0)
-            {
-                Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed);
-                SlashEffectAngle(slashEffect, 90, UpAttackTransform);
-            }
-            else if (yAxis < 0 && !IsGrounded())
-            {
-                Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, recoilYSpeed);
-                SlashEffectAngle(slashEffect, -90, DownAttackTransform);
-            }
-        }
-    }
-
-    void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength)
-    {
-        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
-
-        if (objectsToHit.Length > 0)
-        {
-            _recoilDir = true;
-        }
-        for (int i = 0; i < objectsToHit.Length; i++)
-        {
-            if (objectsToHit[i].GetComponent<Enemy>() != null)
-            {
-                objectsToHit[i].GetComponent<Enemy>().EnemyHit
-                    (damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
-            }
-        }
-    }
-
-    void SlashEffectAngle(GameObject _slashEffect, int _effectAngle, Transform _attackTransform)
-    {
-        _slashEffect = Instantiate(_slashEffect, _attackTransform);
-        _slashEffect.transform.localEulerAngles = new Vector3(0, 0, _effectAngle);
-        _slashEffect.transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
-    }
-
-    void Recoil()
-    {
-        if(pState.recoilingX)
-        {
-            if(pState.lookingRight)
-            {
-                rb.velocity= new Vector2(-recoilXSpeed, 0);
-            }
-            else
-            {
-                rb.velocity = new Vector2(recoilXSpeed, 0);
-            }
-        }
-
-        if(pState.recoilingY)
-        {
-            rb.gravityScale = 0;
-            if (yAxis < 0)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, recoilYSpeed);
-            }
-            else
-            {
-                rb.velocity = new Vector2(rb.velocity.x, -recoilYSpeed);
-            }
-            airJumpCounter = 0;
-        }
-        else
-        {
-            rb.gravityScale = gravity;
-        }
-
-        //Stop recoil
-        if(pState.recoilingX & stepsXRecoiled < recoilXSteps)
-        {
-            stepsXRecoiled++;
-        }
-        else
-        {
-            StopRecoilX();
-        }
-        if (pState.recoilingY && stepsYRecoiled < recoilYSteps)
-        {
-            stepsYRecoiled++;
-        }
-        else
-        {
-            StopRecoilY();
-        }
-
-        if(IsGrounded())
-        {
-            StopRecoilY();
-        }
-    }
-
-    void StopRecoilX()
-    {
-        stepsXRecoiled = 0;
-        pState.recoilingX = false;
-    }
-
-    void StopRecoilY()
-    {
-        stepsYRecoiled = 0;
-        pState.recoilingY = false;
-    }
-
-    public void TakeDamage(float _damage)
-    {
-        health -= Mathf.RoundToInt(_damage);
-        StartCoroutine(StopTakingDamage());
-    }
-
-    IEnumerator StopTakingDamage()
-    {
-        pState.invincible = true;
-        anim.SetTrigger("TakeDamage");
-        ClampHealth();
-        yield return new WaitForSeconds(1f);
-        pState.invincible = false;
-    }
-    void ClampHealth()
-    {
-        health = Mathf.Clamp(health, 0, maxHealth);
-    }
-
     public bool IsGrounded()
     {
         if (Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
@@ -370,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
                 pState.jumping = true;
             }
-            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && doubleJump == true)
             {
                 pState.jumping = true;
 
