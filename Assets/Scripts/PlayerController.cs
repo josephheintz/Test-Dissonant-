@@ -72,7 +72,13 @@ public class PlayerController : MonoBehaviour
     [Space(5)]
 
 
-    private PlayerStateList pState;
+    [Header("Health Settings:")]
+    public int health; //Player's current health
+    public int maxHealth; //Player's max health
+    [Space(5)]
+
+
+    [HideInInspector] public PlayerStateList pState;
     private Animator anim;
     private Rigidbody2D rb;
 
@@ -95,6 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
+        health = maxHealth;
     }
 
 
@@ -130,6 +137,12 @@ public class PlayerController : MonoBehaviour
         Jump();
         StartDash();
         Attack();
+    }
+
+    private void FixedUpdate()
+    {
+        if (pState.dashing) return;
+        Recoil();
     }
 
     void GetInput()
@@ -226,7 +239,8 @@ public class PlayerController : MonoBehaviour
         {
             if (objectsToHit[i].GetComponent<Enemy>() != null)
             {
-                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
+                objectsToHit[i].GetComponent<Enemy>().EnemyHit
+                    (damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
             }
         }
     }
@@ -279,7 +293,7 @@ public class PlayerController : MonoBehaviour
         {
             StopRecoilX();
         }
-        if (pState.recoilingY & stepsYRecoiled < recoilYSteps)
+        if (pState.recoilingY && stepsYRecoiled < recoilYSteps)
         {
             stepsYRecoiled++;
         }
@@ -304,6 +318,25 @@ public class PlayerController : MonoBehaviour
     {
         stepsYRecoiled = 0;
         pState.recoilingY = false;
+    }
+
+    public void TakeDamage(float _damage)
+    {
+        health -= Mathf.RoundToInt(_damage);
+        StartCoroutine(StopTakingDamage());
+    }
+
+    IEnumerator StopTakingDamage()
+    {
+        pState.invincible = true;
+        anim.SetTrigger("TakeDamage");
+        ClampHealth();
+        yield return new WaitForSeconds(1f);
+        pState.invincible = false;
+    }
+    void ClampHealth()
+    {
+        health = Mathf.Clamp(health, 0, maxHealth);
     }
 
     public bool IsGrounded()
