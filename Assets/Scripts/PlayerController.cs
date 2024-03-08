@@ -230,6 +230,7 @@ public class PlayerController : MonoBehaviour
     void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
+        List<Enemy> enemiesHit = new();
 
         if (objectsToHit.Length > 0)
         {
@@ -237,10 +238,11 @@ public class PlayerController : MonoBehaviour
         }
         for (int i = 0; i < objectsToHit.Length; i++)
         {
-            if (objectsToHit[i].GetComponent<Enemy>() != null)
+            Enemy e = objectsToHit[i].GetComponent<Enemy>();
+            if (e && !enemiesHit.Contains(e))
             {
-                objectsToHit[i].GetComponent<Enemy>().EnemyHit
-                    (damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
+                e.EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
+                enemiesHit.Add(e);
             }
         }
     }

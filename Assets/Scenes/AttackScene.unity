@@ -358,8 +358,8 @@ MonoBehaviour:
   slashEffect: {fileID: 6478991826141181828, guid: 88ab495bb11a9454cb80dbd0c05d2bc4, type: 3}
   recoilXSteps: 5
   recoilYSteps: 5
-  recoilXSpeed: 30
-  recoilYSpeed: 25
+  recoilXSpeed: 20
+  recoilYSpeed: 10
   health: 0
   maxHealth: 10
   pState: {fileID: 0}
