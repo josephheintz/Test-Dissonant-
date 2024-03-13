@@ -95,6 +95,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float manaGain;
     [Space(5)]
 
+    [Header("Spell Settings:")]
+    //Spell stats
+    [SerializeField] float manaSpellCost = 0.3f;
+    [SerializeField] float timeBetweenCast = 0.5f;
+    float timeSinceCast;
+    [SerializeField] float spellDamage; //Thunderstrike damage
+
+    //Spell cast game objects
+    [SerializeField] GameObject downSpellThunderstrike;
+    [Space(5)]
+
+
     [HideInInspector] public PlayerStateList pState;
     private Animator anim;
     private Rigidbody2D rb;
@@ -163,6 +175,15 @@ public class PlayerController : MonoBehaviour
         RestoreTimeScale();
         FlashWhileInvincible();
         Heal();
+        CastSpell();
+    }
+
+    private void OnTriggerEnter2D(Collider2D _other) //For the thunderstrike spell
+    {
+        if (_other.GetComponent<Enemy>() != null && pState.casting)
+        {
+            _other.GetComponent<Enemy>().EnemyHit(spellDamage, (_other.transform.position - transform.position).normalized, -recoilYSpeed);
+        }
     }
 
     private void FixedUpdate()
@@ -466,6 +487,38 @@ public class PlayerController : MonoBehaviour
                 manaStorage.fillAmount = Mana;
             }
         }
+    }
+
+    void CastSpell()
+    {
+        if (Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost)
+        {
+            pState.casting = true;
+            timeSinceCast = 0;
+            StartCoroutine(CastCoroutine());
+        }
+        else
+        {
+            timeSinceCast += Time.deltaTime;
+        }
+    }
+
+    IEnumerator CastCoroutine()
+    {
+        anim.SetBool("Casting", true);
+        yield return new WaitForSeconds(0.15f);
+
+        //Down cast
+        if (yAxis < 0)
+        {
+            downSpellThunderstrike.SetActive(true);
+        }
+
+        Mana -= manaSpellCost;
+        yield return new WaitForSeconds(0.35f);
+        anim.SetBool("Casting", false);
+        pState.casting = false;
+        downSpellThunderstrike.SetActive(false);
     }
 
     public bool IsGrounded()
