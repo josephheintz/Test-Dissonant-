@@ -79,6 +79,11 @@ public class PlayerController : MonoBehaviour
     public int health; //Player's current health
     public int maxHealth; //Player's max health
     [SerializeField] float hitFlashSpeed;
+    public delegate void OnHealthChangedDelegate();
+    [HideInInspector] public OnHealthChangedDelegate onHealthChangedCallback;
+
+    float healTimer;
+    [SerializeField] float timeToHeal;
     [Space(5)]
 
 
@@ -146,6 +151,7 @@ public class PlayerController : MonoBehaviour
         Attack();
         RestoreTimeScale();
         FlashWhileInvincible();
+        Heal();
     }
 
     private void FixedUpdate()
@@ -357,7 +363,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Time.timeScale < 1)
             {
-                Time.timeScale += Time.deltaTime * restoreTimeSpeed;
+                Time.timeScale += Time.unscaledDeltaTime * restoreTimeSpeed;
             }
             else
             {
@@ -385,8 +391,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator StartTimeAgain(float _delay)
     {
+        yield return new WaitForSecondsRealtime(_delay);
         restoreTime = true;
-        yield return new WaitForSeconds(_delay);
     }
 
     public int Health
@@ -397,7 +403,35 @@ public class PlayerController : MonoBehaviour
             if(health != value)
             {
                 health = Mathf.Clamp(value, 0, maxHealth);
+
+                if (onHealthChangedCallback != null)
+                {
+                    onHealthChangedCallback.Invoke();
+                }
             }
+        }
+    }
+
+    void Heal()
+    {
+        if(Input.GetButton("Healing") && Health < maxHealth && !pState.jumping && !pState.dashing)
+        {
+            pState.healing = true;
+            anim.SetBool("Healing", true);
+
+            //Healing
+            healTimer += Time.deltaTime;
+            if (healTimer >= timeToHeal)
+            {
+                Health++;
+                healTimer = 0;
+            }
+        }
+        else
+        {
+            pState.healing = false;
+            anim.SetBool("Healing", false);
+            healTimer = 0;
         }
     }
 
