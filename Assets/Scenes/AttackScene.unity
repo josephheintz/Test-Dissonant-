@@ -279,9 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 80
+    m_Left: 90
     m_Right: 0
-    m_Top: 30
+    m_Top: 25
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
@@ -497,11 +497,12 @@ MonoBehaviour:
   recoilXSpeed: 20
   recoilYSpeed: 10
   health: 0
-  maxHealth: 10
+  maxHealth: 4
   hitFlashSpeed: 10
   timeToHeal: 1
-  mana: 0
-  manaDrainSpeed: 0.2
+  manaStorage: {fileID: 844277734}
+  mana: 0.5
+  manaDrainSpeed: 0.4
   manaGain: 0.3
   pState: {fileID: 0}
 --- !u!95 &308010452
