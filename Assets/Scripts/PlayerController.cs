@@ -86,6 +86,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float timeToHeal;
     [Space(5)]
 
+    [Header("Mana Settings:")]
+    [SerializeField] float mana;
+    [SerializeField] float manaDrainSpeed;
+    [Space(5)]
 
     [HideInInspector] public PlayerStateList pState;
     private Animator anim;
@@ -127,6 +131,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         gravity = rb.gravityScale;
+
+        Mana = mana;
     }
 
     private void OnDrawGizmos()
@@ -414,7 +420,7 @@ public class PlayerController : MonoBehaviour
 
     void Heal()
     {
-        if(Input.GetButton("Healing") && Health < maxHealth && !pState.jumping && !pState.dashing)
+        if(Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing)
         {
             pState.healing = true;
             anim.SetBool("Healing", true);
@@ -426,12 +432,25 @@ public class PlayerController : MonoBehaviour
                 Health++;
                 healTimer = 0;
             }
+
+            //Draining mana
+            Mana -= Time.deltaTime * manaDrainSpeed;
         }
         else
         {
             pState.healing = false;
             anim.SetBool("Healing", false);
             healTimer = 0;
+        }
+    }
+
+    float Mana
+    {
+        get { return mana; }
+        set
+        {
+            //If mana stats change
+            mana = Mathf.Clamp(value, 0, 1);
         }
     }
 

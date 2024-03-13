@@ -424,6 +424,8 @@ MonoBehaviour:
   maxHealth: 10
   hitFlashSpeed: 10
   timeToHeal: 1
+  mana: 1
+  manaDrainSpeed: 0.4
   pState: {fileID: 0}
 --- !u!95 &308010452
 Animator:
