@@ -505,6 +505,10 @@ MonoBehaviour:
   mana: 0.5
   manaDrainSpeed: 0.4
   manaGain: 0.3
+  manaSpellCost: 0.3
+  timeBetweenCast: 0.5
+  spellDamage: 10
+  downSpellThunderstrike: {fileID: 1068984958}
   pState: {fileID: 0}
 --- !u!95 &308010452
 Animator:
@@ -546,6 +550,7 @@ MonoBehaviour:
   lookingRight: 0
   invincible: 0
   healing: 0
+  casting: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1303fc24c0d952544afe5153808be2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  hitForce: 0
 --- !u!1 &1312369410
 GameObject:
   m_ObjectHideFlags: 0

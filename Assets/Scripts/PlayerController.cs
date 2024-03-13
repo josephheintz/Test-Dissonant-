@@ -506,7 +506,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator CastCoroutine()
     {
         anim.SetBool("Casting", true);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.5f);
 
         //Down cast
         if (yAxis < 0)
@@ -515,7 +515,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Mana -= manaSpellCost;
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.85f);
         anim.SetBool("Casting", false);
         pState.casting = false;
         downSpellThunderstrike.SetActive(false);
