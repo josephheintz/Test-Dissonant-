@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
     [Header("Mana Settings:")]
     [SerializeField] float mana;
     [SerializeField] float manaDrainSpeed;
+    [SerializeField] float manaGain;
     [Space(5)]
 
     [HideInInspector] public PlayerStateList pState;
@@ -264,6 +265,9 @@ public class PlayerController : MonoBehaviour
             {
                 e.EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
                 enemiesHit.Add(e);
+
+                //Gain mana on enemy hit
+                Mana += manaGain;
             }
         }
     }
