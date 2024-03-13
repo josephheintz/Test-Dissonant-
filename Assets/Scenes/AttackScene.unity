@@ -506,7 +506,7 @@ MonoBehaviour:
   manaDrainSpeed: 0.4
   manaGain: 0.3
   manaSpellCost: 0.3
-  timeBetweenCast: 0.5
+  timeBetweenCast: 1
   spellDamage: 10
   downSpellThunderstrike: {fileID: 1068984958}
   pState: {fileID: 0}
