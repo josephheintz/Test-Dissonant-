@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
                 pState.jumping = true;
             }
-            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && doubleJump == true)
+            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
             {
                 pState.jumping = true;
 
