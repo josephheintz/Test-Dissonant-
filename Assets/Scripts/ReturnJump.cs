@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ReturnJump : MonoBehaviour
 {
-    [SerializeField] public Vector2 landing; // Where the player will appear on the next map
+    [SerializeField] private Vector2 landing; // Where the player will appear on the next map
+    [SerializeField] private GameObject playerPrefab; // Prefab of the player object
 
-    private void OnTriggerEnter2D(Collider2D other){
+    private void Start()
+    {
+        SceneManager.LoadScene(1);
+        playerPrefab.transform.position = landing;
 
-            // Detect player tag on player
-            if(other.tag == "Player"){
-                SceneManager.LoadScene(1);
-                other.transform.position = landing;
-            }
-        }
-
+    }
 }
+
