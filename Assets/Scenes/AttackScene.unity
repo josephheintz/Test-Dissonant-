@@ -501,8 +501,8 @@ MonoBehaviour:
   maxHealth: 4
   hitFlashSpeed: 10
   timeToHeal: 1
-  canDash: 0
-  canDoubleJump: 0
+  canDash: 1
+  canDoubleJump: 1
   manaStorage: {fileID: 844277734}
   mana: 0.5
   manaDrainSpeed: 0.4
@@ -1163,7 +1163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1068984959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1303fc24c0d952544afe5153808be2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 5
   hitForce: 0
 --- !u!1 &1312369410
 GameObject:
