@@ -116,7 +116,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4286611584
+    rgba: 4289429329
   m_Size: 0.8
 --- !u!1 &1864256704603572957
 GameObject:
@@ -129,9 +129,9 @@ GameObject:
   - component: {fileID: 2817513180473989702}
   - component: {fileID: 3062716473576731974}
   - component: {fileID: 7076429737702262176}
-  - component: {fileID: 2076697384720821472}
+  - component: {fileID: 6275887866043897107}
   m_Layer: 0
-  m_Name: RetunTeleporter
+  m_Name: NexisTeleporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpText: {fileID: 3232562915603451224}
-  selectEffect: 1
+  selectEffect: 2
 --- !u!61 &7076429737702262176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,8 +197,8 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -213,7 +213,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2076697384720821472
+--- !u!114 &6275887866043897107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,10 +222,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1864256704603572957}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a30b57ed74dad459e9163ffd1f8ba53f, type: 3}
+  m_Script: {fileID: 11500000, guid: 965fb6eaa785f46bda72fbf667010954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   landing: {x: 0, y: 0}
+  world: 0
 --- !u!1 &3452911866974548777
 GameObject:
   m_ObjectHideFlags: 0
