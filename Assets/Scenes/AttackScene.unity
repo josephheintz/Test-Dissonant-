@@ -501,6 +501,8 @@ MonoBehaviour:
   maxHealth: 4
   hitFlashSpeed: 10
   timeToHeal: 1
+  canDash: 0
+  canDoubleJump: 0
   manaStorage: {fileID: 844277734}
   mana: 0.5
   manaDrainSpeed: 0.4

@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashSpeed; //Speed of the dash
     [SerializeField] private float dashTime; //Amount of time dashing
     [SerializeField] private float dashCooldown; //Amount of time between dashes (cooldown)
-    private bool canDash = true, dashed;
+    private bool dashCheck = true, dashed;
     [Space(5)]
 
 
@@ -85,6 +85,11 @@ public class PlayerController : MonoBehaviour
 
     float healTimer;
     [SerializeField] float timeToHeal;
+    [Space(5)]
+
+    [Header("Ability Settings:")]
+    [SerializeField] public bool canDash;
+    [SerializeField] public bool canDoubleJump;
     [Space(5)]
 
     [Header("Mana Settings:")]
@@ -221,7 +226,7 @@ public class PlayerController : MonoBehaviour
 
     void StartDash()
     {
-        if (canDash && Input.GetButtonDown("Dash") && !dashed)
+        if (dashCheck && Input.GetButtonDown("Dash") && !dashed && canDash)
         {
             StartCoroutine(Dash());
             dashed = true;
@@ -235,7 +240,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
-        canDash = false;
+        dashCheck = false;
         pState.dashing = true;
         anim.SetTrigger("Dashing");
         rb.gravityScale = 0;
@@ -244,7 +249,7 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = gravity;
         pState.dashing = false;
         yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
+        dashCheck = true;
     }
 
     void Attack()
@@ -552,7 +557,7 @@ public class PlayerController : MonoBehaviour
 
                 pState.jumping = true;
             }
-            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && canDoubleJump)
             {
                 pState.jumping = true;
 
