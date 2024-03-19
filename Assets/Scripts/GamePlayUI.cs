@@ -9,12 +9,17 @@ public class GamePlayUI : MonoBehaviour
     [SerializeField]  private GameObject menu; // Prefab of the player object
     private Text healthText;
     private bool isPulsed = false;
+    private bool unPulsed = false;
 
 
     void Start(){
         healthText = GetComponent<Text>();
         //GameObject player = GameObject.FindGameObjectWithTag("Player");
         menu.SetActive(false);
+    }
+
+    void ResumeGame(){
+        unPulsed = true;
     }
 
     // Update is called once per frame
@@ -29,11 +34,13 @@ public class GamePlayUI : MonoBehaviour
              player.GetComponent<PlayerController>().enabled = false;
              menu.SetActive(true);
              isPulsed = true;
-        } else if (Input.GetKeyDown(KeyCode.Escape) && isPulsed == true){
+             unPulsed = false;
+        } else if ((Input.GetKeyDown(KeyCode.Escape) && isPulsed == true) || unPulsed == true){
             Time.timeScale = 1f;
             player.GetComponent<PlayerController>().enabled = true;
             isPulsed = false;
             menu.SetActive(false);
+            unPulsed = true;
         }
     }
 }

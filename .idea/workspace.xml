@@ -2,120 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Slash Effect.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Slash Effect.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DestroyAfterAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DestroyAfterAnimation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Slime.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Slime.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_01.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_02.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_03.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_04.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_05.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/1/Alternative_2_06.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-0.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-attack-4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-0.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-die-3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-0.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-hurt-3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-0.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-idle-3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-0.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/Individual Sprites/slime-move-3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/slime-Sheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/slime-Sheet.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Alternative_2_01.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Alternative_2_01.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Full Attack.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Full Attack.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Slash.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Slash.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStateList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStateList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Attack.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Hurt.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Hurt.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Warrior.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Warrior free set/Aniamtion/Warrior.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="2dMLKt6Z7NAYV9MtTn3RtDpROTW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging master",
-    "kotlin-language-version-configured": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.editor",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1710869681080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710869681080</updated>
+    </task>
+    <servers />
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
