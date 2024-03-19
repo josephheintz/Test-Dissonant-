@@ -19,7 +19,7 @@ public class GamePlayUI : MonoBehaviour
     }
 
     void ResumeGame(){
-        unPulsed = true;
+        unPulsed = true; // lets the player unpule the game with menu button
     }
 
     // Update is called once per frame
