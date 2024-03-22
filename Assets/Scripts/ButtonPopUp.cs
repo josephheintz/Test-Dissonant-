@@ -31,7 +31,7 @@ public class ButtonPopUp : MonoBehaviour
     void GetInput()
     {
         // Check if the player is pressing the interaction button
-        if (Input.GetButtonDown(interactionButton)) // active when "e" is pressed
+        if (Input.GetAxisRaw(interactionButton) < 0) // active when "e" is pressed
         {
             if(selectEffect == 0) Debug.Log("Hello, how are you?"); // default, says hi on the log
             if(selectEffect == 1) gameObject.GetComponent<ReturnJump>().enabled = true; // uses the return jump
@@ -39,6 +39,8 @@ public class ButtonPopUp : MonoBehaviour
             if(selectEffect == 3) Debug.Log("What will this be?"); // replace with other interact
             if(selectEffect == 4) Debug.Log("What will this be?"); // replace with other interact
             // Can add here
+        } else if(Input.GetAxisRaw(interactionButton) > 0){
+
         }
     }
 

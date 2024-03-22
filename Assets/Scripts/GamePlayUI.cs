@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Import UnityEngine.UI to use Text compone
+using UnityEngine.SceneManagement;
 
 public class GamePlayUI : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GamePlayUI : MonoBehaviour
     private Text healthText;
     private bool isPulsed = false;
     private bool unPulsed = false;
+    private GameObject playerPrefab; // Prefab of the player object
 
 
     void Start(){
@@ -19,8 +21,26 @@ public class GamePlayUI : MonoBehaviour
     }
 
     void ResumeGame(){
-        unPulsed = true; // lets the player unpule the game with menu button
+        unPulsed = true; // lets the player un-pulse the game with menu button
     }
+
+    void ReturnToHub(){
+        //SceneManager.LoadScene(1);
+        //ReturnJump.Jump();
+    }
+
+    void QuitGame(){
+        Application.Quit(); // lets the player quit the game DOSE NOT WORK FROM THE EDITOR
+    }
+
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Re-enable the pulse menu GameObject
+        menu.SetActive(true);
+        Debug.Log("Hello");
+    }
+
 
     // Update is called once per frame
     void Update()

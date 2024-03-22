@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public Object Managers;
     [SerializeField] public Object Inventory;
     [SerializeField] public Object Camera;
+    [SerializeField] public Object EventSystem;
 
     void Awake()
     {
@@ -17,10 +18,12 @@ public class LevelManager : MonoBehaviour
             DontDestroyOnLoad(Player);
             DontDestroyOnLoad(Managers);
             DontDestroyOnLoad(Camera);
+            DontDestroyOnLoad(EventSystem);
         } else {
             Destroy(Player);
             Destroy(Managers);
             Destroy(Camera);
+            Destroy(EventSystem);
         }
     }
 }
