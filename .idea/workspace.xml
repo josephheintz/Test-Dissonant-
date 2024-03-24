@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
