@@ -1088,7 +1088,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ResumeGame
+          m_StringArgument: ReturnToHub
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &405963178
@@ -3518,7 +3518,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ResumeGame
+          m_StringArgument: QuitGame
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1756538471
@@ -4323,6 +4323,8 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 901007116}
   - {fileID: 753526268}
+  - {fileID: 2119505233}
+  - {fileID: 1413653002}
   - {fileID: 577054466}
   - {fileID: 405962148}
   - {fileID: 732322034}
@@ -4331,10 +4333,8 @@ SceneRoots:
   - {fileID: 172355473}
   - {fileID: 30782284}
   - {fileID: 290163141}
-  - {fileID: 2119505233}
   - {fileID: 577958968}
   - {fileID: 1415432721}
-  - {fileID: 1413653002}
   - {fileID: 1081142618}
   - {fileID: 1879769648}
   - {fileID: 456769253}

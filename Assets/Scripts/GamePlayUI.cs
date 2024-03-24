@@ -26,9 +26,7 @@ public class GamePlayUI : MonoBehaviour
     }
 
     void ReturnToHub(){
-        //SceneManager.LoadScene(1);
         ReturnJump.Jump();
-        //Debug.Log("Hello");
     }
 
     void QuitGame(){
