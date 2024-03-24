@@ -22,11 +22,13 @@ public class GamePlayUI : MonoBehaviour
 
     void ResumeGame(){
         unPulsed = true; // lets the player un-pulse the game with menu button
+        //Debug.Log("Hello");
     }
 
     void ReturnToHub(){
         //SceneManager.LoadScene(1);
-        //ReturnJump.Jump();
+        ReturnJump.Jump();
+        //Debug.Log("Hello");
     }
 
     void QuitGame(){
