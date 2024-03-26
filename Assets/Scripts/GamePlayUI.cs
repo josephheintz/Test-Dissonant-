@@ -6,23 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayUI : MonoBehaviour
 {
-    [SerializeField]  private GameObject player; // Prefab of the player object
+    private GameObject player; // Prefab of the player object
     [SerializeField]  private GameObject menu; // Prefab of the player object
+    [SerializeField]  private GameObject nexMenu; // Prefab of the player object
     private Text healthText;
     private bool isPulsed = false;
     private bool unPulsed = false;
+    public bool nexOn = false;
     private GameObject playerPrefab; // Prefab of the player object
 
 
     void Start(){
         healthText = GetComponent<Text>();
-        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+
         menu.SetActive(false);
     }
 
     void ResumeGame(){
         unPulsed = true; // lets the player un-pulse the game with menu button
-        //Debug.Log("Hello");
     }
 
     void ReturnToHub(){
@@ -38,7 +40,6 @@ public class GamePlayUI : MonoBehaviour
     {
         // Re-enable the pulse menu GameObject
         menu.SetActive(true);
-        Debug.Log("Hello");
     }
 
 
@@ -47,6 +48,7 @@ public class GamePlayUI : MonoBehaviour
     {
         //healthText.text = "Health: " + player.GetComponent<Health>().currentHealth.ToString();
         // Check if the Esc key is pressed to toggle pause
+        nexMenu.SetActive(nexOn);
 
         if (Input.GetKeyDown(KeyCode.Escape) && isPulsed == false)
         {
@@ -56,11 +58,11 @@ public class GamePlayUI : MonoBehaviour
              isPulsed = true;
              unPulsed = false;
         } else if ((Input.GetKeyDown(KeyCode.Escape) && isPulsed == true) || unPulsed == true){
-            Time.timeScale = 1f;
-            player.GetComponent<PlayerController>().enabled = true;
-            isPulsed = false;
-            menu.SetActive(false);
-            unPulsed = true;
+             Time.timeScale = 1f;
+             player.GetComponent<PlayerController>().enabled = true;
+             isPulsed = false;
+             menu.SetActive(false);
+             unPulsed = true;
         }
     }
 }

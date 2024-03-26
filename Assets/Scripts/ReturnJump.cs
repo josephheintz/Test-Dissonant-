@@ -17,7 +17,6 @@ public class ReturnJump : MonoBehaviour
     {
         GameObject playerPrefab = GameObject.FindGameObjectWithTag("Player");
         SceneManager.LoadScene(1);
-        SceneManager.LoadScene(1);
         playerPrefab.transform.position = new Vector2(0, 4);
     }
 
