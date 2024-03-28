@@ -46,10 +46,10 @@ public class GamePlayUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //healthText.text = "Health: " + player.GetComponent<Health>().currentHealth.ToString();
-        // Check if the Esc key is pressed to toggle pause
+
         nexMenu.SetActive(nexOn);
 
+        // Check if the Esc key is pressed to toggle pause
         if (Input.GetKeyDown(KeyCode.Escape) && isPulsed == false)
         {
              Time.timeScale = 0f;

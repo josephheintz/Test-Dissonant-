@@ -5,15 +5,10 @@ using UnityEngine;
 public class Equipment : MonoBehaviour
 {
     // Define the custom data type for equipment items
-    [System.Serializable]
-    public class Item
+    [System.Serializable] public class Item
     {
         public string name;
-        public int damage;
-        public int electric;
-        public int water;
-        public int fire;
-        public int wind;
+        public bool have;
     }
 
     // Define the equipment slots and initialize them with instances of the Item class

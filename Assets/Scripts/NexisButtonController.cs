@@ -24,7 +24,6 @@ public class NexisButtonController : MonoBehaviour
 
     public void NexJump(int scene)
     {
-        //landing = new Vector2(0, 4);
         player.transform.position = landing;
         SceneManager.LoadScene(scene);
     }
