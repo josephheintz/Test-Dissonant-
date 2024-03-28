@@ -137,6 +137,8 @@ public class PlayerController : MonoBehaviour
             Instance = this;
         }
         Health = maxHealth;
+
+        DontDestroyOnLoad(gameObject);
     }
 
 
@@ -244,7 +246,8 @@ public class PlayerController : MonoBehaviour
         pState.dashing = true;
         anim.SetTrigger("Dashing");
         rb.gravityScale = 0;
-        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+        int _dir = pState.lookingRight ? 1 : -1;
+        rb.velocity = new Vector2(_dir * dashSpeed, 0);
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = gravity;
         pState.dashing = false;
@@ -542,29 +545,26 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
-            pState.jumping = false;
+            pState.jumping = true;
+        }
+        if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && canDoubleJump)
+        {
+            pState.jumping = true;
+
+            airJumpCounter++;
+
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce);
         }
 
-        if (!pState.jumping)
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 3)
         {
-            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            pState.jumping = false;
 
-                pState.jumping = true;
-            }
-            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && canDoubleJump)
-            {
-                pState.jumping = true;
-
-                airJumpCounter++;
-
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            }
+            rb.velocity = new Vector2(rb.velocity.x, 0);
         }
 
         anim.SetBool("Jumping", !IsGrounded());

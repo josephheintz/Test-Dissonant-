@@ -18,13 +18,7 @@ public class Enemy : MonoBehaviour
     protected float recoilTimer;
     protected Rigidbody2D rb;
 
-    // Start is called before the first frame update
     protected virtual void Start()
-    {
-        
-    }
-
-    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         player = PlayerController.Instance;
