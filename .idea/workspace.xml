@@ -3,10 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NexisButtonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NexisButtonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Fantasy/FantasyLevelOne.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Fantasy/FantasyLevelOne.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipment.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipment.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gear.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gear.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
