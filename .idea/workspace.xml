@@ -3,11 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Inventory/PlayerInventroy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inventory/PlayerInventroy.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemScripts/InvetoryObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemScripts/InvetoryObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Bone.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Bone.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Crystals.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Crystals.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Metal.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Metal.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Obsidian.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Obsidian.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/PlayerInventroy.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/PlayerInventroy.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Sword.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Sword.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Unarmed.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Unarmed.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Wood.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/Wood.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemScripts/PlayerInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemScripts/PlayerInventory.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

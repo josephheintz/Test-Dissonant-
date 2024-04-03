@@ -4248,6 +4248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: c6620ad9124e84d3da4bb2daac06f0cf, type: 2}
+  clear: 0
 --- !u!1 &778233632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7122,7 +7123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ad2e4e855874f799600082c8b10cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: c6620ad9124e84d3da4bb2daac06f0cf, type: 2}
+  clear: 0
 --- !u!1 &1415432718
 GameObject:
   m_ObjectHideFlags: 0
@@ -8679,15 +8681,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1354495253611451559, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_Color.b
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1354495253611451559, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_Color.g
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1354495253611451559, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_Color.r
-      value: 0.4
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042899550926810096, guid: 49b609b676c38426baa969809045d2f4, type: 3}
+      propertyPath: m_text
+      value: Obsidian
       objectReference: {fileID: 0}
     - target: {fileID: 3042899550926810096, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_fontColor.b
@@ -10245,6 +10251,10 @@ PrefabInstance:
     - target: {fileID: 782473905270600844, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_Name
       value: Counter (Crystals)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042899550926810096, guid: 49b609b676c38426baa969809045d2f4, type: 3}
+      propertyPath: m_text
+      value: Crystal
       objectReference: {fileID: 0}
     - target: {fileID: 6841395927566302290, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_isRightToLeft
