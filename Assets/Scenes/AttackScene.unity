@@ -246,8 +246,8 @@ Transform:
   m_GameObject: {fileID: 197283107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8, y: 10.15, z: 0.5}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -2.8, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 708266883}
@@ -1016,8 +1016,8 @@ Transform:
   m_GameObject: {fileID: 611620367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.5, y: 18.9, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 5.08, y: 2.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 128082419}
@@ -1346,8 +1346,8 @@ Transform:
   m_GameObject: {fileID: 776345732}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.8, y: 11.9, z: 4}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -9.48, y: 0, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 21340066}
@@ -1511,11 +1511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3dd886c6aad8a409ef4e1799c7e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  heartContainers: []
-  heartFills: []
-  heartsParent: {fileID: 251527482}
-  heartContainerPrefab: {fileID: 3634331783372169937, guid: 703a2e59f98a55947ba66826f55b844f, type: 3}
 --- !u!114 &851184250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,8 +1955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1303fc24c0d952544afe5153808be2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  hitForce: 0
 --- !u!1 &1312369410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,15 +2304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d5e7bcc99dcef4d82260e6c7764d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  recoilLength: 0.5
-  recoilFactor: 100
-  isRecoiling: 0
-  player: {fileID: 0}
-  speed: 1
-  damage: 1
-  recoilTimer: 0
-  rb: {fileID: 0}
 --- !u!61 &1661397481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2453,8 +2437,8 @@ Transform:
   m_GameObject: {fileID: 1857875509}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.73808, y: 10.9, z: -5}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -2.73808, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 253344007}
@@ -2571,8 +2555,8 @@ Transform:
   m_GameObject: {fileID: 1889557149}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.73808, y: 9.2, z: -15}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -2.73808, y: 0, z: -15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 250690270}
