@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: PlayerInventroy
   m_EditorClassIdentifier: 
   Container:
-  - weapon: {fileID: 11400000, guid: 2b5a84413e1164ec485f2443ad4a2447, type: 2}
+  - item: {fileID: 11400000, guid: 2b5a84413e1164ec485f2443ad4a2447, type: 2}
     amount: 0
-  - weapon: {fileID: 11400000, guid: efcc524fb2685454689ab0cc76b7990f, type: 2}
+  - item: {fileID: 11400000, guid: 2b5a84413e1164ec485f2443ad4a2447, type: 2}
     amount: 0
-  - weapon: {fileID: 11400000, guid: b0f2d2d04ea7d403789002adc20051c8, type: 2}
+  - item: {fileID: 11400000, guid: efcc524fb2685454689ab0cc76b7990f, type: 2}
     amount: 0
-  - weapon: {fileID: 11400000, guid: 91e70ab7e5d4f49b28b3b7eb98f5d5c4, type: 2}
+  - item: {fileID: 11400000, guid: b0f2d2d04ea7d403789002adc20051c8, type: 2}
     amount: 0
-  - weapon: {fileID: 11400000, guid: e6810b4fd103345f2a94553c4d986d25, type: 2}
+  - item: {fileID: 11400000, guid: 91e70ab7e5d4f49b28b3b7eb98f5d5c4, type: 2}
+    amount: 0
+  - item: {fileID: 11400000, guid: e6810b4fd103345f2a94553c4d986d25, type: 2}
     amount: 0

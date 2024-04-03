@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class InventoryObject : ScriptableObject
 {
-    public List<WeaponSlot> Container =  new List<WeaponSlot>();
+    public List<ItemSlot> Container =  new List<ItemSlot>();
     public void AddGear(Gear _gear, int _amount){
         bool has = false;
 
         for(int i = 0; i < Container.Count; i++){
-            if(Container[i].weapon == _gear){
+            if(Container[i].item == _gear){
                 has = true;
                 Container[i].addAmount(_amount);
                 break;
@@ -19,18 +19,18 @@ public class InventoryObject : ScriptableObject
         }
 
         if(has == false){
-            Container.Add(new WeaponSlot(_gear, _amount));
+            Container.Add(new ItemSlot(_gear, _amount));
         }
 
     }
 
     // Define the custom data type for equipment Weapon
-    [System.Serializable] public class WeaponSlot
+    [System.Serializable] public class ItemSlot
     {
-        public Gear weapon;
+        public Gear item;
         public int amount;
-        public WeaponSlot(Gear _weapon, int _amount){
-            weapon = _weapon;
+        public ItemSlot(Gear _item, int _amount){
+            item = _item;
             amount = _amount;
         }
 

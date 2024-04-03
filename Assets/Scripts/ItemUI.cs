@@ -13,18 +13,15 @@ public class ItemUI : MonoBehaviour
     [SerializeField]  public GameObject textFour;
     [SerializeField]  public GameObject textFive;
 
-    Dictionary<InventoryObject.WeaponSlot, GameObject> itemsDisplayed = new Dictionary<InventoryObject.WeaponSlot, GameObject>();
+    Dictionary<InventoryObject.ItemSlot, GameObject> itemsDisplayed = new Dictionary<InventoryObject.ItemSlot, GameObject>();
 
     // Update is called once per frame
     void Update()
     {
-
         textOne.GetComponent<Text>().text = Inventory.Container[0].amount.ToString();
         textTwo.GetComponent<Text>().text = Inventory.Container[1].amount.ToString();
         textThree.GetComponent<Text>().text = Inventory.Container[2].amount.ToString();
         textFour.GetComponent<Text>().text = Inventory.Container[3].amount.ToString();
         textFive.GetComponent<Text>().text = Inventory.Container[4].amount.ToString();
-
     }
-
 }
