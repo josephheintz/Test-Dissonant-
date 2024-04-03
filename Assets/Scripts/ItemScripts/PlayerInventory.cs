@@ -16,7 +16,13 @@ public class PlayerInventory : MonoBehaviour
     }
 
     private void OnApplicationQuit(){
-        if(inventory != null && inventory.Container != null) inventory.Container.Clear();
+        if(inventory != null && inventory.Container != null) {
+
+            for(int i = 0; i < inventory.Container.Count; i++) inventory.Container[i].amount = 0;
+
+            //inventory.Container.Clear();
+
+        }
     }
 
 }
