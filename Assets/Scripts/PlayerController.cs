@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashSpeed; //Speed of the dash
     [SerializeField] private float dashTime; //Amount of time dashing
     [SerializeField] private float dashCooldown; //Amount of time between dashes (cooldown)
-    private bool canDash = true, dashed;
+    private bool dashCheck = true, dashed;
     [Space(5)]
 
 
@@ -58,6 +59,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float damage; //Damage player does to an enemy
 
     [SerializeField] private GameObject slashEffect; //Effect of the slash
+
+    bool restoreTime;
+    float restoreTimeSpeed;
     [Space(5)]
 
 
@@ -75,12 +79,43 @@ public class PlayerController : MonoBehaviour
     [Header("Health Settings:")]
     public int health; //Player's current health
     public int maxHealth; //Player's max health
+    [SerializeField] float hitFlashSpeed;
+    public delegate void OnHealthChangedDelegate();
+    [HideInInspector] public OnHealthChangedDelegate onHealthChangedCallback;
+
+    float healTimer;
+    [SerializeField] float timeToHeal;
+    [Space(5)]
+
+    [Header("Ability Settings:")]
+    [SerializeField] public bool canDash;
+    [SerializeField] public bool canDoubleJump;
+    [Space(5)]
+
+    [Header("Mana Settings:")]
+    [SerializeField] Image manaStorage;
+
+    [SerializeField] float mana;
+    [SerializeField] float manaDrainSpeed;
+    [SerializeField] float manaGain;
+    [Space(5)]
+
+    [Header("Spell Settings:")]
+    //Spell stats
+    [SerializeField] float manaSpellCost = 0.3f;
+    [SerializeField] float timeBetweenCast = 0.5f;
+    float timeSinceCast;
+    [SerializeField] float spellDamage; //Thunderstrike damage
+
+    //Spell cast game objects
+    [SerializeField] GameObject downSpellThunderstrike;
     [Space(5)]
 
 
     [HideInInspector] public PlayerStateList pState;
     private Animator anim;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
 
     //Input Variables
@@ -102,6 +137,8 @@ public class PlayerController : MonoBehaviour
             Instance = this;
         }
         Health = maxHealth;
+
+        DontDestroyOnLoad(gameObject);
     }
 
 
@@ -112,9 +149,14 @@ public class PlayerController : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
+        sr = GetComponent<SpriteRenderer>();
+
         anim = GetComponent<Animator>();
 
         gravity = rb.gravityScale;
+
+        Mana = mana;
+        manaStorage.fillAmount = Mana;
     }
 
     private void OnDrawGizmos()
@@ -137,6 +179,18 @@ public class PlayerController : MonoBehaviour
         Jump();
         StartDash();
         Attack();
+        RestoreTimeScale();
+        FlashWhileInvincible();
+        Heal();
+        CastSpell();
+    }
+
+    private void OnTriggerEnter2D(Collider2D _other) //For the thunderstrike spell
+    {
+        if (_other.GetComponent<Enemy>() != null && pState.casting)
+        {
+            _other.GetComponent<Enemy>().EnemyHit(spellDamage, (_other.transform.position - transform.position).normalized, -recoilYSpeed);
+        }
     }
 
     private void FixedUpdate()
@@ -174,7 +228,7 @@ public class PlayerController : MonoBehaviour
 
     void StartDash()
     {
-        if (canDash && Input.GetButtonDown("Dash") && !dashed)
+        if (dashCheck && Input.GetButtonDown("Dash") && !dashed && canDash)
         {
             StartCoroutine(Dash());
             dashed = true;
@@ -188,16 +242,17 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
-        canDash = false;
+        dashCheck = false;
         pState.dashing = true;
         anim.SetTrigger("Dashing");
         rb.gravityScale = 0;
-        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+        int _dir = pState.lookingRight ? 1 : -1;
+        rb.velocity = new Vector2(_dir * dashSpeed, 0);
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = gravity;
         pState.dashing = false;
         yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
+        dashCheck = true;
     }
 
     void Attack()
@@ -243,6 +298,9 @@ public class PlayerController : MonoBehaviour
             {
                 e.EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
                 enemiesHit.Add(e);
+
+                //Gain mana on enemy hit
+                Mana += manaGain;
             }
         }
     }
@@ -251,7 +309,7 @@ public class PlayerController : MonoBehaviour
     {
         _slashEffect = Instantiate(_slashEffect, _attackTransform);
         _slashEffect.transform.localEulerAngles = new Vector3(0, 0, _effectAngle);
-        _slashEffect.transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
+        // _slashEffect.transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
     }
 
     void Recoil()
@@ -335,6 +393,51 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         pState.invincible = false;
     }
+
+    void FlashWhileInvincible()
+    {
+        sr.material.color = pState.invincible ? 
+            Color.Lerp(Color.white, Color.black, Mathf.PingPong(Time.time * hitFlashSpeed, 1.0f)) : Color.white;
+    }
+
+    void RestoreTimeScale()
+    {
+        if (restoreTime)
+        {
+            if (Time.timeScale < 1)
+            {
+                Time.timeScale += Time.unscaledDeltaTime * restoreTimeSpeed;
+            }
+            else
+            {
+                Time.timeScale = 1;
+                restoreTime = false;
+            }
+        }
+    }
+
+    public void HitStopTime(float _newTimeScale, int _restoreSpeed, float _delay)
+    {
+        restoreTimeSpeed = _restoreSpeed;
+        Time.timeScale = _newTimeScale;
+
+        if (_delay > 0)
+        {
+            StopCoroutine(StartTimeAgain(_delay));
+            StartCoroutine(StartTimeAgain(_delay));
+        }
+        else
+        {
+            restoreTime = true;
+        }
+    }
+
+    IEnumerator StartTimeAgain(float _delay)
+    {
+        yield return new WaitForSecondsRealtime(_delay);
+        restoreTime = true;
+    }
+
     public int Health
     {
         get { return health; }
@@ -343,8 +446,87 @@ public class PlayerController : MonoBehaviour
             if(health != value)
             {
                 health = Mathf.Clamp(value, 0, maxHealth);
+
+                if (onHealthChangedCallback != null)
+                {
+                    onHealthChangedCallback.Invoke();
+                }
             }
         }
+    }
+
+    void Heal()
+    {
+        if(Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing)
+        {
+            pState.healing = true;
+            anim.SetBool("Healing", true);
+
+            //Healing
+            healTimer += Time.deltaTime;
+            if (healTimer >= timeToHeal)
+            {
+                Health++;
+                healTimer = 0;
+            }
+
+            //Draining mana
+            Mana -= Time.deltaTime * manaDrainSpeed;
+        }
+        else
+        {
+            pState.healing = false;
+            anim.SetBool("Healing", false);
+            healTimer = 0;
+        }
+    }
+
+    float Mana
+    {
+        get { return mana; }
+        set
+        {
+            //If mana stats change
+            if (mana != value)
+            {
+                mana = Mathf.Clamp(value, 0, 100);
+
+                //Update mana bar
+                manaStorage.fillAmount = Mana;
+            }
+        }
+    }
+
+    void CastSpell()
+    {
+        if (Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost)
+        {
+            pState.casting = true;
+            timeSinceCast = 0;
+            StartCoroutine(CastCoroutine());
+        }
+        else
+        {
+            timeSinceCast += Time.deltaTime;
+        }
+    }
+
+    IEnumerator CastCoroutine()
+    {
+        anim.SetBool("Casting", true);
+        yield return new WaitForSeconds(0.5f);
+
+        //Down cast
+        if (yAxis < 0)
+        {
+            downSpellThunderstrike.SetActive(true);
+        }
+
+        Mana -= manaSpellCost;
+        yield return new WaitForSeconds(0.85f);
+        anim.SetBool("Casting", false);
+        pState.casting = false;
+        downSpellThunderstrike.SetActive(false);
     }
 
     public bool IsGrounded()
@@ -363,29 +545,26 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
-            pState.jumping = false;
+            pState.jumping = true;
+        }
+        if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && canDoubleJump)
+        {
+            pState.jumping = true;
+
+            airJumpCounter++;
+
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce);
         }
 
-        if (!pState.jumping)
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 3)
         {
-            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            pState.jumping = false;
 
-                pState.jumping = true;
-            }
-            else if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
-            {
-                pState.jumping = true;
-
-                airJumpCounter++;
-
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            }
+            rb.velocity = new Vector2(rb.velocity.x, 0);
         }
 
         anim.SetBool("Jumping", !IsGrounded());

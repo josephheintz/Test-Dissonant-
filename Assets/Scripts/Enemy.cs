@@ -18,13 +18,7 @@ public class Enemy : MonoBehaviour
     protected float recoilTimer;
     protected Rigidbody2D rb;
 
-    // Start is called before the first frame update
     protected virtual void Start()
-    {
-        
-    }
-
-    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         player = PlayerController.Instance;
@@ -65,6 +59,7 @@ public class Enemy : MonoBehaviour
         if(_other.CompareTag("Player") && !PlayerController.Instance.pState.invincible)
         {
             Attack();
+            PlayerController.Instance.HitStopTime(0, 5, 0.5f);
         }
     }
 
