@@ -26,7 +26,6 @@ public class PlayerInventory : MonoBehaviour
         if(inventory != null && inventory.Container != null) {
 
             if(!clear) for(int i = 0; i < inventory.Container.Count; i++) inventory.Container[i].amount = 0;
-
             if(clear) inventory.Container.Clear();
 
         }
