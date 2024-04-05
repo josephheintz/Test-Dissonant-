@@ -493,10 +493,10 @@ MonoBehaviour:
     m_Bits: 64
   damage: 1
   slashEffect: {fileID: 6478991826141181828, guid: 88ab495bb11a9454cb80dbd0c05d2bc4, type: 3}
-  recoilXSteps: 5
+  recoilXSteps: 0
   recoilYSteps: 5
-  recoilXSpeed: 100
-  recoilYSpeed: 32
+  recoilXSpeed: 0
+  recoilYSpeed: 10
   health: 0
   maxHealth: 4
   hitFlashSpeed: 10
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 2
-  enragedAttackDamage: 40
+  attackCooldown: 2
 --- !u!1 &2059706029
 GameObject:
   m_ObjectHideFlags: 0
