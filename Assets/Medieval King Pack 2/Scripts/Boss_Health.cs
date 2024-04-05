@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour
+public class BossHealth : Enemy
 {
-
-    public int health = 10;
 
     private CapsuleCollider2D capsuleCollider;
 
@@ -13,38 +11,28 @@ public class BossHealth : MonoBehaviour
 
     private Animator animator;
 
-    private void Start()
+    // Start is called before the first frame update
+    protected override void Start()
     {
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        base.Start();
+        rb.gravityScale = 12f;
     }
 
-  
-    private void Update()
+    // Update is called once per frame
+    protected override void Update()
     {
-        // Check if the CapsuleCollider2D component is not null
-        if (capsuleCollider != null)
-        {
-            // Create an array to store all colliders within the BoxCollider2D bounds
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0f);
+        base.Update();
 
-            // Loop through all colliders found within the BoxCollider2D bounds
-            foreach (Collider2D collider in colliders)
-            {
-                // Check if the collider belongs to the player
-                if (collider.CompareTag("Player"))
-                {
-                    // Apply damage to the boss
-                    health -= 1;
-                    animator = GetComponent<Animator>();
-                    animator.SetTrigger("TakeDamage");
-                }
-            }
-            if (health <= 0)
-            {
-                // animator.SetTrigger("Fall");
-                // Destroy(gameObject);
-            }
-        }
+    }
+
+    public override void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
+    {
+        base.EnemyHit(_damageDone, _hitDirection, _hitForce);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
 }
