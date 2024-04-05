@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 120899554}
   m_Layer: 0
   m_Name: Up Attack Transform
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1124,7 +1124,7 @@ GameObject:
   - component: {fileID: 1052777782}
   m_Layer: 0
   m_Name: Down Attack Transform
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1322,7 +1322,7 @@ GameObject:
   - component: {fileID: 1312369411}
   m_Layer: 0
   m_Name: Side Attack Transform
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1613,6 +1613,7 @@ GameObject:
   - component: {fileID: 1824559309}
   - component: {fileID: 1824559316}
   - component: {fileID: 1824559315}
+  - component: {fileID: 1824559317}
   m_Layer: 0
   m_Name: FantasyBoss
   m_TagString: Untagged
@@ -1671,7 +1672,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6e793b7bcc301004bbb354af0cdc849d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1813,7 +1814,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1841,8 +1842,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cebe0392f1ef4ecaa8d6cfedc0e59d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 2
-  enragedAttackDamage: 40
+  attackDamage: 1
+  attackCooldown: 2
+--- !u!114 &1824559317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824559308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cadd249ac5645fab97fe3d6d3952a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  deathEffect: {fileID: 0}
+  isInvulnerable: 0
 --- !u!1 &2059706029
 GameObject:
   m_ObjectHideFlags: 0

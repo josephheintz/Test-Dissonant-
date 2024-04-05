@@ -9,8 +9,6 @@ public class BossHealth : MonoBehaviour
 
     private CapsuleCollider2D capsuleCollider;
 
-    public GameObject deathEffect;
-
     public bool isInvulnerable = false;
 
     private Animator animator;
@@ -20,7 +18,8 @@ public class BossHealth : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
-    public void TakeDamage()
+  
+    private void Update()
     {
         // Check if the CapsuleCollider2D component is not null
         if (capsuleCollider != null)
@@ -34,7 +33,7 @@ public class BossHealth : MonoBehaviour
                 // Check if the collider belongs to the player
                 if (collider.CompareTag("Player"))
                 {
-                    // Apply damage to the player
+                    // Apply damage to the boss
                     health -= 1;
                     animator = GetComponent<Animator>();
                     animator.SetTrigger("TakeDamage");
@@ -42,16 +41,10 @@ public class BossHealth : MonoBehaviour
             }
             if (health <= 0)
             {
-                Die();
+                // animator.SetTrigger("Fall");
+                // Destroy(gameObject);
             }
         }
-
-    }
-
-    void Die()
-    {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
     }
 
 }
