@@ -3668,6 +3668,8 @@ MonoBehaviour:
   recoilingY: 0
   lookingRight: 0
   invincible: 0
+  healing: 0
+  casting: 0
 --- !u!95 &753526263
 Animator:
   serializedVersion: 5
@@ -3732,6 +3734,18 @@ MonoBehaviour:
   recoilYSpeed: 10
   health: 0
   maxHealth: 10
+  hitFlashSpeed: 0
+  timeToHeal: 0
+  canDash: 0
+  canDoubleJump: 0
+  manaStorage: {fileID: 0}
+  mana: 0
+  manaDrainSpeed: 0
+  manaGain: 0
+  manaSpellCost: 0.3
+  timeBetweenCast: 0.5
+  spellDamage: 0
+  downSpellThunderstrike: {fileID: 0}
   pState: {fileID: 0}
 --- !u!50 &753526265
 Rigidbody2D:
@@ -4611,8 +4625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 425, y: 365}
-  m_SizeDelta: {x: -850, y: -770}
+  m_AnchoredPosition: {x: 413, y: 373}
+  m_SizeDelta: {x: -828.6284, y: -736.9712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986545486
 MonoBehaviour:
@@ -7452,19 +7466,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3042899550926810096, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.4
+      value: 0.23829655
       objectReference: {fileID: 0}
     - target: {fileID: 3042899550926810096, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.4
+      value: 0.23829655
       objectReference: {fileID: 0}
     - target: {fileID: 3042899550926810096, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.4
+      value: 0.3301887
       objectReference: {fileID: 0}
     - target: {fileID: 3042899550926810096, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4284900966
+      value: 4282203476
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_Pivot.x
