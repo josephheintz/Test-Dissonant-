@@ -5,8 +5,6 @@ using UnityEngine;
 public class BossHealth : Enemy
 {
 
-    private CapsuleCollider2D capsuleCollider;
-
     public bool isInvulnerable = false;
 
     private Animator animator;
@@ -28,6 +26,7 @@ public class BossHealth : Enemy
     public override void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
+        animator.SetTrigger("TakeDamage");
     }
 
     public void Die()
