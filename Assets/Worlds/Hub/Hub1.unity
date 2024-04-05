@@ -307,7 +307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684251977658957348, guid: beb7145308520493286f0ddfcb69301f, type: 3}
       propertyPath: resetX
-      value: -35
+      value: -38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -529,7 +529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684251977658957348, guid: beb7145308520493286f0ddfcb69301f, type: 3}
       propertyPath: resetX
-      value: 35
+      value: 38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
