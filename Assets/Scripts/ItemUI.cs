@@ -18,10 +18,16 @@ public class ItemUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textOne.GetComponent<Text>().text = Inventory.Container[0].amount.ToString();
-        textTwo.GetComponent<Text>().text = Inventory.Container[1].amount.ToString();
-        textThree.GetComponent<Text>().text = Inventory.Container[2].amount.ToString();
-        textFour.GetComponent<Text>().text = Inventory.Container[3].amount.ToString();
-        textFive.GetComponent<Text>().text = Inventory.Container[4].amount.ToString();
+        //textOne.GetComponent<Text>().text = Inventory.Container[0].amount.ToString();
+        //textTwo.GetComponent<Text>().text = Inventory.Container[1].amount.ToString();
+
+        //Debug.Log(Inventory.Container.Count);
+        //if (Inventory.Container.Count >= 4){
+            textOne.GetComponent<Text>().text = Inventory.Container[0].amount.ToString();
+            textTwo.GetComponent<Text>().text = Inventory.Container[1].amount.ToString();
+            textThree.GetComponent<Text>().text = Inventory.Container[2].amount.ToString();
+            textFour.GetComponent<Text>().text = Inventory.Container[3].amount.ToString();
+            textFive.GetComponent<Text>().text = Inventory.Container[4].amount.ToString();
+        //}
     }
 }
