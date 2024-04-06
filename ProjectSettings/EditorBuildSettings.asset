@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Worlds/Fantasy/FantasyLevelOne.unity
     guid: 7929073eb05594a53bdba600d6ae2e67
+  - enabled: 1
+    path: Assets/Worlds/Hub/HubStart.unity
+    guid: 130e6d28e185c4ea9b385b7a5d7fca01
   m_configObjects: {}

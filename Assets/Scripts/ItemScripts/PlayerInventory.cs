@@ -5,17 +5,8 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public InventoryObject inventory;
-    private GameObject player; // Prefab of the player object
-    //public Collider2D triggerCollider; // Collider to use for triggering
     [SerializeField] public bool clear;
 
-
-    public void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        //Debug.Log(player);
-        //triggerCollider = player.GetComponent<Collider2D>();
-    }
 
     public void OnTriggerEnter2D(Collider2D other){
         var item = other.GetComponent<Item>();
