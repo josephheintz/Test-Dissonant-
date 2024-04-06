@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public new string name = "New Item";
+    public string description = "New Description";
+    public Sprite icon;
+    public int currentQuantity = 1;
 }
