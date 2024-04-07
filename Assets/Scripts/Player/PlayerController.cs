@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
         gravity = rb.gravityScale;
 
         Mana = mana;
-        manaStorage.fillAmount = Mana;
+        //manaStorage.fillAmount = Mana;
     }
 
     private void OnDrawGizmos()
