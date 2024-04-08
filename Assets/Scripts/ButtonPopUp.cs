@@ -38,7 +38,7 @@ public class ButtonPopUp : MonoBehaviour
             if(selectEffect == 0) Debug.Log("Hello, how are you?"); // default, says hi on the log
             if(selectEffect == 1) gameObject.GetComponent<ReturnJump>().enabled = true; // uses the return jump
             if(selectEffect == 2) teleportMenu(); // uses the nexis jump
-            if(selectEffect == 3) gameObject.GetComponent<InteractionNote>().on = true; // replace with other interact
+            if(selectEffect == 3) gameObject.GetComponent<InteractionNote>().on = true; // Shows a note
             if(selectEffect == 4) Debug.Log("What will this be?"); // replace with other interact
             // Can add here
         } else if(Input.GetAxisRaw(interactionButton) > 0){
