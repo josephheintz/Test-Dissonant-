@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackOut: {fileID: 2078131182329837179}
+  blackOutCanvas: {fileID: 8532270916484338122}
 --- !u!1 &8532270916484338122
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1191412313082482117
 RectTransform:
   m_ObjectHideFlags: 0

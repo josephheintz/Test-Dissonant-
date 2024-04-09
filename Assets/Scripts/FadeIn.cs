@@ -5,9 +5,12 @@ using UnityEngine.UI;
 public class FadeIn : MonoBehaviour
 {
     [SerializeField] private RawImage blackOut; // Change this to RawImage type
+    [SerializeField] private GameObject blackOutCanvas; // Reference to the Canvas or the parent GameObject of RawImage
+
 
     void Start()
     {
+        blackOutCanvas.SetActive(true);
         StartCoroutine(FadeInCoroutine());
     }
 
@@ -20,6 +23,6 @@ public class FadeIn : MonoBehaviour
             blackOut.color = color;
             yield return null;
         }
-        blackOut.enabled = false;
+        blackOutCanvas.SetActive(false);
     }
 }
