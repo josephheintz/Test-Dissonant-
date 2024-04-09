@@ -9,6 +9,7 @@ public class GamePlayUI : MonoBehaviour
     private GameObject player; // Prefab of the player object
     [SerializeField]  private GameObject menu; // Prefab of the player object
     [SerializeField]  private GameObject nexMenu; // Prefab of the player object
+
     private Text healthText;
     private bool isPulsed = false;
     private bool unPulsed = false;
@@ -19,7 +20,6 @@ public class GamePlayUI : MonoBehaviour
     void Start(){
         healthText = GetComponent<Text>();
         player = GameObject.FindGameObjectWithTag("Player");
-
         menu.SetActive(false);
     }
 
