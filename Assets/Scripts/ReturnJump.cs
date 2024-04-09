@@ -13,9 +13,7 @@ public class ReturnJump : MonoBehaviour
 
     public void Start()
     {
-        //Debug.Log("Hello");
         StartCoroutine(Fade());
-        //Jump();
     }
 
     public IEnumerator Fade()
