@@ -21,6 +21,42 @@ public class GamePlayUI : MonoBehaviour
         healthText = GetComponent<Text>();
         player = GameObject.FindGameObjectWithTag("Player");
         menu.SetActive(false);
+
+        SetButtons();
+    }
+
+    void SetButtons(){
+        Transform Fant2 = transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (1)");
+        Transform Fant3 = transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (2)");
+        Transform Fant4 = transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (3)");
+
+        Transform Sci2 = transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (4)");
+        Transform Sci3 = transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (5)");
+        Transform Sci4 = transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (6)");
+
+        Transform Oce2 = transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (1)");
+        Transform Oce3 = transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (2)");
+        Transform Oce4 = transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (3)");
+
+        Transform Hell2 = transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (1)");
+        Transform Hell3 = transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (2)");
+        Transform Hell4 = transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (3)");
+
+        Fant2.gameObject.SetActive(false);
+        Fant3.gameObject.SetActive(false);
+        Fant4.gameObject.SetActive(false);
+
+        Sci2.gameObject.SetActive(false);
+        Sci3.gameObject.SetActive(false);
+        Sci4.gameObject.SetActive(false);
+
+        Oce2.gameObject.SetActive(false);
+        Oce3.gameObject.SetActive(false);
+        Oce4.gameObject.SetActive(false);
+
+        Hell2.gameObject.SetActive(false);
+        Hell3.gameObject.SetActive(false);
+        Hell4.gameObject.SetActive(false);
     }
 
     void ResumeGame(){
