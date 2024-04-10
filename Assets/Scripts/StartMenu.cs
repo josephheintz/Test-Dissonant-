@@ -12,10 +12,13 @@ public class StartMenu : MonoBehaviour
         
     }
 
-    public void NewGame(){
+    void NewGame(){
         SceneManager.LoadScene(4);
     }
 
+    void QuitGame(){
+        Application.Quit(); // lets the player quit the game DOSE NOT WORK FROM THE EDITOR
+    }
 
 
     // Update is called once per frame

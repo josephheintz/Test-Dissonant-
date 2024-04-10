@@ -32,7 +32,8 @@ public class GamePlayUI : MonoBehaviour
     }
 
     void QuitGame(){
-        Application.Quit(); // lets the player quit the game DOSE NOT WORK FROM THE EDITOR
+        //Application.Quit(); // lets the player quit the game DOSE NOT WORK FROM THE EDITOR
+        SceneManager.LoadScene(5);
     }
 
 
