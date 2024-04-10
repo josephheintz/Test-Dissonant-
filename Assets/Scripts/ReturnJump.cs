@@ -10,9 +10,13 @@ public class ReturnJump : MonoBehaviour
     [SerializeField] private RawImage blackOut; // Change this to RawImage type
     private Vector2 landing = new Vector2(0, 4); // Where the player will appear on the next map
     private GameObject playerPrefab; // Prefab of the player object
+    [SerializeField] public int TelaIndex; //
+    private GameObject levelManager; // the Managers system
 
     public void Start()
     {
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager");
+        levelManager.GetComponent<TeleportTracker>().telea[TelaIndex] = true;
         StartCoroutine(Fade());
     }
 
