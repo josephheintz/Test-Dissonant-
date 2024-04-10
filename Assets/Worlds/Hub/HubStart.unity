@@ -9722,6 +9722,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4941287150373789016, guid: 14b475345eae2485281488bf1def0d75, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5410262174182250591, guid: 14b475345eae2485281488bf1def0d75, type: 3}
       propertyPath: m_Name
       value: Fade In
