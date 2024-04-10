@@ -6,24 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    void NewGame(){
+    public void NewGame(){
         SceneManager.LoadScene(4);
     }
 
-    void QuitGame(){
+    public void LoudGame(){
+        SceneManager.LoadScene(4);
+    }
+
+    public void Credits(){
+        SceneManager.LoadScene(6);
+    }
+
+    public void QuitGame(){
         Application.Quit(); // lets the player quit the game DOSE NOT WORK FROM THE EDITOR
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

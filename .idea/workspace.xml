@@ -3,10 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Screens/CreditsScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Screens/CreditsScreen.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasfors/1_VG0FfMRv6fA4kkV5e8TXEA.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasfors/1_VG0FfMRv6fA4kkV5e8TXEA.webp.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasfors/Alternative_2_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasfors/Alternative_2_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasfors/unity_engine_fee_controversy_1694684851182.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasfors/unity_engine_fee_controversy_1694684851182.webp.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
