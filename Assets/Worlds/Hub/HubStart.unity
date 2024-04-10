@@ -5861,9 +5861,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1219024242}
   - component: {fileID: 1219024243}
+  - component: {fileID: 1219024244}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5900,6 +5901,19 @@ MonoBehaviour:
   Inventory: {fileID: 1413653001}
   Camera: {fileID: 519420028}
   EventSystem: {fileID: 1415432718}
+--- !u!114 &1219024244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219024241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0d9beb9ee9a49fbae9928bd710aab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  telea: 000000000000000000000000000000000000000000
 --- !u!1 &1231094759
 GameObject:
   m_ObjectHideFlags: 0
@@ -9593,7 +9607,7 @@ GameObject:
   - component: {fileID: 2119505233}
   m_Layer: 0
   m_Name: Managers
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
