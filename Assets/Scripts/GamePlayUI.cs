@@ -14,49 +14,57 @@ public class GamePlayUI : MonoBehaviour
     private bool isPulsed = false;
     private bool unPulsed = false;
     public bool nexOn = false;
-    private GameObject playerPrefab; // Prefab of the player object
+    //private GameObject playerPrefab; // Prefab of the player object
+    private GameObject levelManager; // Prefab of the player object
+    public Transform[] buttons;
 
 
     void Start(){
         healthText = GetComponent<Text>();
         player = GameObject.FindGameObjectWithTag("Player");
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager");
         menu.SetActive(false);
 
         SetButtons();
     }
 
     void SetButtons(){
-        Transform Fant2 = transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (1)");
-        Transform Fant3 = transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (2)");
-        Transform Fant4 = transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (3)");
 
-        Transform Sci2 = transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (4)");
-        Transform Sci3 = transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (5)");
-        Transform Sci4 = transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (6)");
+        buttons[0] =  null;
 
-        Transform Oce2 = transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (1)");
-        Transform Oce3 = transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (2)");
-        Transform Oce4 = transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (3)");
+        buttons[1] =  transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (1)");
+        buttons[2] =  transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (2)");
+        buttons[3] =  transform.Find("NexesTeleportScreen/FantButtons/Button (Legacy) (3)");
 
-        Transform Hell2 = transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (1)");
-        Transform Hell3 = transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (2)");
-        Transform Hell4 = transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (3)");
+        buttons[4] =  transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (4)");
+        buttons[5] =  transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (5)");
+        buttons[6] =  transform.Find("NexesTeleportScreen/SciButtons/Button (Legacy) (6)");
 
-        Fant2.gameObject.SetActive(false);
-        Fant3.gameObject.SetActive(false);
-        Fant4.gameObject.SetActive(false);
+        buttons[7] =  transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (1)");
+        buttons[8] =  transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (2)");
+        buttons[9] =  transform.Find("NexesTeleportScreen/OceButtons/Button (Legacy) (3)");
 
-        Sci2.gameObject.SetActive(false);
-        Sci3.gameObject.SetActive(false);
-        Sci4.gameObject.SetActive(false);
+        buttons[10] =  transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (1)");
+        buttons[11] =  transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (2)");
+        buttons[12] =  transform.Find("NexesTeleportScreen/HellButtons/Button (Legacy) (3)");
 
-        Oce2.gameObject.SetActive(false);
-        Oce3.gameObject.SetActive(false);
-        Oce4.gameObject.SetActive(false);
 
-        Hell2.gameObject.SetActive(false);
-        Hell3.gameObject.SetActive(false);
-        Hell4.gameObject.SetActive(false);
+
+        buttons[1].gameObject.SetActive(false);
+        buttons[2].gameObject.SetActive(false);
+        buttons[3].gameObject.SetActive(false);
+
+        buttons[4].gameObject.SetActive(false);
+        buttons[5].gameObject.SetActive(false);
+        buttons[6].gameObject.SetActive(false);
+
+        buttons[7].gameObject.SetActive(false);
+        buttons[8].gameObject.SetActive(false);
+        buttons[9].gameObject.SetActive(false);
+
+        buttons[10].gameObject.SetActive(false);
+        buttons[11].gameObject.SetActive(false);
+        buttons[12].gameObject.SetActive(false);
     }
 
     void ResumeGame(){
@@ -83,6 +91,11 @@ public class GamePlayUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    //if (levelManager.GetComponent<TeleportTracker>().telea[1] == true)
+    //{
+        //buttons[0].gameObject.SetActive(true);
+    //}
 
         nexMenu.SetActive(nexOn);
 

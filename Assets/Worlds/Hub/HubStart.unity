@@ -4605,7 +4605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &979894801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5542,7 +5542,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Outer Garden
 --- !u!222 &1122982115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7188,7 +7188,7 @@ GameObject:
   - component: {fileID: 1461302846}
   - component: {fileID: 1461302845}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Button(OuterGarden)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7631,6 +7631,27 @@ MonoBehaviour:
   menu: {fileID: 396280298}
   nexMenu: {fileID: 979894800}
   nexOn: 0
+  buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1643096524
 GameObject:
   m_ObjectHideFlags: 0

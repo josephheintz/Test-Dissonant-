@@ -2171,6 +2171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RetunTeleporter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2076697384720821472, guid: 170f99174970c4ed2bdab20fbceed342, type: 3}
+      propertyPath: TelaIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2136965037312567844, guid: 170f99174970c4ed2bdab20fbceed342, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -2185,7 +2189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2817513180473989702, guid: 170f99174970c4ed2bdab20fbceed342, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -57
+      value: -59
       objectReference: {fileID: 0}
     - target: {fileID: 2817513180473989702, guid: 170f99174970c4ed2bdab20fbceed342, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3156,6 +3160,7 @@ MonoBehaviour:
   menu: {fileID: 396280298}
   nexMenu: {fileID: 0}
   nexOn: 0
+  buttons: []
 --- !u!1 &1664263462
 GameObject:
   m_ObjectHideFlags: 0
