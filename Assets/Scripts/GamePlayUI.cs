@@ -91,12 +91,6 @@ public class GamePlayUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    //if (levelManager.GetComponent<TeleportTracker>().telea[1] == true)
-    //{
-        //buttons[0].gameObject.SetActive(true);
-    //}
-
         nexMenu.SetActive(nexOn);
 
         // Check if the Esc key is pressed to toggle pause
