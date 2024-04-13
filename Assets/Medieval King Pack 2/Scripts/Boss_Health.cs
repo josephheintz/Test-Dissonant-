@@ -16,6 +16,12 @@ public class BossHealth : Enemy
     protected override void Update()
     {
         base.Update();
+        if (health <= 0)
+        {
+            animator.SetBool("StillAlive", false);
+            animator.SetTrigger("Fall");
+            StartCoroutine(DestroyAfterDelay());
+        }
     }
 
     public override void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
@@ -30,4 +36,9 @@ public class BossHealth : Enemy
         Destroy(gameObject);
     }
 
+    IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f); // Wait for 2 second after animation finishes
+        Destroy(gameObject); // Destroy the game object
+    }
 }
