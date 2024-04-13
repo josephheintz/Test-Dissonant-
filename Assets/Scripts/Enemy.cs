@@ -17,11 +17,14 @@ public class Enemy : MonoBehaviour
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
+    protected Animator animator;
 
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = PlayerController.Instance;
+        animator = GetComponent<Animator>();
+        animator.SetBool("StillAlive", true);
     }
 
     // Update is called once per frame
@@ -29,7 +32,9 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            animator.SetBool("StillAlive", false);
+            animator.SetTrigger("Fall");
+            StartCoroutine(DestroyAfterDelay());
         }
 
         if (isRecoiling)
@@ -59,12 +64,18 @@ public class Enemy : MonoBehaviour
         if(_other.CompareTag("Player") && !PlayerController.Instance.pState.invincible)
         {
             Attack();
-            PlayerController.Instance.HitStopTime(0, 5, 0.5f);
+            // PlayerController.Instance.HitStopTime(0, 5, 0.5f);
         }
     }
 
     protected virtual void Attack()
     {
         PlayerController.Instance.TakeDamage(damage);   
+    }
+
+    IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f); // Wait for 2 second after animation finishes
+        Destroy(gameObject); // Destroy the game object
     }
 }

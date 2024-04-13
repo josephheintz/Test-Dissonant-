@@ -6,15 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Worlds/Hub/Hub1.unity
     guid: 2e657faec04104480bc96787183b9b57
   - enabled: 1
-    path: Assets/Scenes/AttackScene.unity
+    path: Assets/Scenes/BrightForest.unity
     guid: 71dee4b8e9971474792f586807fb8a09
   - enabled: 1
     path: Assets/Worlds/Fantasy/FantasyLevelOne.unity
     guid: 7929073eb05594a53bdba600d6ae2e67
+  - enabled: 1
+    path: Assets/Worlds/Hub/HubStart.unity
+    guid: 130e6d28e185c4ea9b385b7a5d7fca01
+  - enabled: 1
+    path: Assets/Scenes/Screens/StartScreen.unity
+    guid: 3576f6090e0b14e67bb8cf8594676997
+  - enabled: 1
+    path: Assets/Scenes/Screens/CreditsScreen.unity
+    guid: 99e13ade7497348098015c07dab83cba
   m_configObjects: {}
