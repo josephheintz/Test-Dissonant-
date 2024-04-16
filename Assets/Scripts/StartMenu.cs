@@ -13,6 +13,7 @@ public class StartMenu : MonoBehaviour
 
     public void LoudGame(){
         SceneManager.LoadScene(4);
+        PersistenceDataManager.instance.LoadGame();
     }
 
     public void Credits(){

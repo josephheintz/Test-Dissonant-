@@ -25,6 +25,10 @@ public class SetTeleport : MonoBehaviour
                         if(levelMagnager.GetComponent<TeleportTracker>().telea[i] == true) {
                             UIMagnager.GetComponent<GamePlayUI>().buttons[i].gameObject.SetActive(true);
                         }
+
+                        else if(levelMagnager.GetComponent<TeleportTracker>().telea[i] == false) {
+                            UIMagnager.GetComponent<GamePlayUI>().buttons[i].gameObject.SetActive(false);
+                        }
                     }
                     //Debug.Log(levelMagnager.GetComponent<TeleportTracker>().telea[i]);
                     //UIMagnager.GetComponent<GamePlayUI>().buttons[i].gameObject.SetActive(true);

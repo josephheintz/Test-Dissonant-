@@ -1892,7 +1892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &396280299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5993,6 +5993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0d9beb9ee9a49fbae9928bd710aab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hi: 0
   telea: 000000000000000000000000000000000000000000
 --- !u!1 &1231094759
 GameObject:
@@ -8631,9 +8632,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1637745898}
-        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
-        m_MethodName: SendMessage
-        m_Mode: 5
+        m_TargetAssemblyTypeName: GamePlayUI, Assembly-CSharp
+        m_MethodName: LoadAGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9863,6 +9864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119505233}
+  - component: {fileID: 2119505234}
   m_Layer: 0
   m_Name: Managers
   m_TagString: GameController
@@ -9889,6 +9891,18 @@ Transform:
   - {fileID: 1637745897}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2119505234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119505232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7156858fc294752ab24c2d75ef1441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &188430899414951640
 PrefabInstance:
   m_ObjectHideFlags: 0

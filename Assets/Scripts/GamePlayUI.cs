@@ -71,6 +71,10 @@ public class GamePlayUI : MonoBehaviour
         unPulsed = true; // lets the player un-pulse the game with menu button
     }
 
+    public void LoadAGame(){
+        PersistenceDataManager.instance.LoadGame();
+    }
+
     void ReturnToHub(){
         ReturnJump.Jump();
     }
