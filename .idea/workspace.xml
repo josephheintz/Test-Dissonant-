@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SetTeleport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SetTeleport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TeleportMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TeleportMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Treleportrs/TeleportTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Treleportrs/TeleportTracker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hub/Hub1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hub/Hub1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/FileDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/FileDataHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
