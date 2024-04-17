@@ -9903,6 +9903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7156858fc294752ab24c2d75ef1441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fileName: data.json
 --- !u!1001 &188430899414951640
 PrefabInstance:
   m_ObjectHideFlags: 0
