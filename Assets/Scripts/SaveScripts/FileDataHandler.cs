@@ -14,6 +14,12 @@ public class FileDataHandler
         this.dataFileName = dataFileName;
     }
 
+    // Method to get the full save file path
+    public string GetSaveFilePath()
+    {
+        return Path.Combine(dataDirPath, dataFileName);
+    }
+
     public SaveData Load(){
         string fullPath = Path.Combine(dataDirPath, dataFileName);
         SaveData loadedData = null;
@@ -35,7 +41,7 @@ public class FileDataHandler
                 Debug.LogError("Save error at " + fullPath + "/n" + e);
             }
         }
-
+        //Debug.Log(dataDirPath);
         return loadedData;
     }
 
@@ -52,7 +58,7 @@ public class FileDataHandler
             }
         }
         catch (Exception e){
-            Debug.LogError("Save error at " + fullPath + "/n" + e);
+            //Debug.LogError("Save error at " + fullPath + "/n" + e);
         }
     }
 }

@@ -8,7 +8,19 @@ public class StartMenu : MonoBehaviour
 {
 
     public void NewGame(){
-        SceneManager.LoadScene(4);
+        //SceneManager.LoadScene(4);
+        PersistenceDataManager.instance.NewGame();
+
+        // Get the save file path from the FileDataHandler
+       /* string saveFilePath = PersistenceDataManager.instance.dataHandler.GetDataHandler().GetSaveFilePath();
+
+        // Delete previous save file if it exists
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath);
+        }*/
+
+        SceneManager.LoadScene(0);
     }
 
     public void LoudGame(){

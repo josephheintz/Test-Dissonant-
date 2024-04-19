@@ -6,11 +6,11 @@ using UnityEngine;
 public class SaveData
 {
     [SerializeField] public bool[] teleporterList;
-    public int hi;
+    public int[] playerResources;
 
     public SaveData()
     {
-        this.hi = 0;
+        playerResources = new int[8];
         teleporterList = new bool[21];
     }
 }

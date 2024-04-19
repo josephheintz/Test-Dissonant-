@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 
 public class PersistenceDataManager : MonoBehaviour
@@ -17,7 +18,7 @@ public class PersistenceDataManager : MonoBehaviour
     private SaveData gameData;
 
     public List<IDataPersistence> dataPersistenceObjects;
-    private FileDataHandler dataHandler;
+    public FileDataHandler dataHandler;
 
     private void Awake(){
         if(instance != null) Debug.LogError("There are to many Persistence Data Managers.");
@@ -31,6 +32,14 @@ public class PersistenceDataManager : MonoBehaviour
     }
 
     public void NewGame(){
+
+        // Delete previous save file if it exists
+        if (File.Exists(dataHandler.GetSaveFilePath()))
+        {
+            Debug.Log(dataHandler.GetSaveFilePath());
+            File.Delete(dataHandler.GetSaveFilePath());
+            LoadGame();
+        }
         this.gameData = new SaveData();
     }
 
@@ -49,7 +58,9 @@ public class PersistenceDataManager : MonoBehaviour
 
         if(this.gameData == null){
             Debug.Log("No saved data, using starting new game");
-            NewGame();
+            if (gameData == null) NewGame();
+        } else {
+            //ReturnJump.Jump();
         }
 
         // push the loaded data to all other scripts that need it

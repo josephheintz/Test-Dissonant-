@@ -22,6 +22,7 @@ public class GamePlayUI : MonoBehaviour
     void Start(){
         healthText = GetComponent<Text>();
         player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log(player);
         levelManager = GameObject.FindGameObjectWithTag("LevelManager");
         menu.SetActive(false);
 
@@ -76,7 +77,10 @@ public class GamePlayUI : MonoBehaviour
     }
 
     void ReturnToHub(){
-        ReturnJump.Jump();
+        //PersistenceDataManager.instance.NewGame();
+        //PersistenceDataManager.instance.SaveGame();
+        PersistenceDataManager.instance.NewGame();
+        //ReturnJump.Jump();
     }
 
     void QuitGame(){
