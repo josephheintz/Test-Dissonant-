@@ -3,28 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class StartMenu : MonoBehaviour
 {
 
+    [SerializeField] private GameObject managers;
+    [SerializeField] private GameObject loadButton;
+
+    private void Start(){
+        if (managers.GetComponent<PersistenceDataManager>().IsSave())
+        {
+            loadButton.SetActive(true);
+        } else {
+            loadButton.SetActive(false);
+        }
+
+    }
+
     public void NewGame(){
         //SceneManager.LoadScene(4);
         PersistenceDataManager.instance.NewGame();
-
-        // Get the save file path from the FileDataHandler
-       /* string saveFilePath = PersistenceDataManager.instance.dataHandler.GetDataHandler().GetSaveFilePath();
-
-        // Delete previous save file if it exists
-        if (File.Exists(saveFilePath))
-        {
-            File.Delete(saveFilePath);
-        }*/
-
         SceneManager.LoadScene(0);
     }
 
     public void LoudGame(){
         SceneManager.LoadScene(4);
+        ReturnJump.Jump();
         PersistenceDataManager.instance.LoadGame();
     }
 

@@ -31,8 +31,19 @@ public class PersistenceDataManager : MonoBehaviour
         LoadGame();
     }
 
+    public bool IsSave(){
+
+        // Delete previous save file if it exists
+        if (File.Exists(dataHandler.GetSaveFilePath()))
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void NewGame(){
 
+        Debug.Log("Hello");
         // Delete previous save file if it exists
         if (File.Exists(dataHandler.GetSaveFilePath()))
         {
@@ -49,18 +60,16 @@ public class PersistenceDataManager : MonoBehaviour
                 dataPersistenceObj.SaveData(ref gameData);
             }
 
-
         dataHandler.Save(gameData);
     }
 
     public void LoadGame(){
         this.gameData = dataHandler.Load();
+        Debug.Log("Why??");
 
         if(this.gameData == null){
             Debug.Log("No saved data, using starting new game");
             if (gameData == null) NewGame();
-        } else {
-            //ReturnJump.Jump();
         }
 
         // push the loaded data to all other scripts that need it

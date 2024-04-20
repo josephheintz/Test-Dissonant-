@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemScripts/PlayerInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemScripts/PlayerInventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/FileDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/FileDataHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/PersistenceDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/PersistenceDataManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/SaveData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Treleportrs/TeleportTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Treleportrs/TeleportTracker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

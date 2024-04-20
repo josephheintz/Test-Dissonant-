@@ -22,7 +22,7 @@ public class GamePlayUI : MonoBehaviour
     void Start(){
         healthText = GetComponent<Text>();
         player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(player);
+        //Debug.Log(player);
         levelManager = GameObject.FindGameObjectWithTag("LevelManager");
         menu.SetActive(false);
 

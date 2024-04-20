@@ -58,7 +58,7 @@ public class FileDataHandler
             }
         }
         catch (Exception e){
-            //Debug.LogError("Save error at " + fullPath + "/n" + e);
+            Debug.LogError("Save error at " + fullPath + "/n" + e);
         }
     }
 }
