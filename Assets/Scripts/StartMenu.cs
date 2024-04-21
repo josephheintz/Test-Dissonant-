@@ -8,17 +8,19 @@ using System.IO;
 public class StartMenu : MonoBehaviour
 {
 
-    [SerializeField] private GameObject managers;
-    [SerializeField] private GameObject loadButton;
+    private GameObject managers;
+    [SerializeField] public GameObject loadButton;
 
     private void Start(){
+        managers = GameObject.FindGameObjectWithTag("GameController");
+        Debug.Log(managers);
         if (managers.GetComponent<PersistenceDataManager>().IsSave())
         {
             loadButton.SetActive(true);
         } else {
             loadButton.SetActive(false);
         }
-
+        PersistenceDataManager.instance.LoadGame();
     }
 
     public void NewGame(){
@@ -28,7 +30,7 @@ public class StartMenu : MonoBehaviour
     }
 
     public void LoudGame(){
-        SceneManager.LoadScene(4);
+        //SceneManager.LoadScene(4);
         ReturnJump.Jump();
         PersistenceDataManager.instance.LoadGame();
     }
