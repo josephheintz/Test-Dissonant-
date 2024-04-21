@@ -780,7 +780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &129007781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4155,7 +4155,7 @@ GameObject:
   - component: {fileID: 1092252803}
   - component: {fileID: 1092252802}
   m_Layer: 5
-  m_Name: Button (Quests)
+  m_Name: Button (Load)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6415,7 +6415,7 @@ MonoBehaviour:
   player: {fileID: 173341927}
   managers: {fileID: 821361350}
   inventory: {fileID: 1074406090}
-  camera: {fileID: 975646502}
+  mainCamera: {fileID: 975646502}
   eventSystem: {fileID: 754012881}
 --- !u!1 &1491809322
 GameObject:
@@ -6781,6 +6781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1334197163}
   nexMenu: {fileID: 1357100038}
+  isInMainMenu: 0
   nexOn: 0
   buttons:
   - {fileID: 0}
@@ -7344,7 +7345,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quest List
+  m_Text: Load Save
 --- !u!222 &1774822244
 CanvasRenderer:
   m_ObjectHideFlags: 0

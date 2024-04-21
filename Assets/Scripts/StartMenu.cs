@@ -9,11 +9,13 @@ public class StartMenu : MonoBehaviour
 {
 
     private GameObject managers;
+    private GameObject uiManager;
     [SerializeField] public GameObject loadButton;
 
     private void Start(){
         managers = GameObject.FindGameObjectWithTag("GameController");
-        Debug.Log(managers);
+        uiManager = GameObject.FindGameObjectWithTag("UIManager");
+
         if (managers.GetComponent<PersistenceDataManager>().IsSave())
         {
             loadButton.SetActive(true);
@@ -21,16 +23,18 @@ public class StartMenu : MonoBehaviour
             loadButton.SetActive(false);
         }
         PersistenceDataManager.instance.LoadGame();
+
+        uiManager.GetComponent<GamePlayUI>().isInMainMenu = true;
     }
 
     public void NewGame(){
-        //SceneManager.LoadScene(4);
+        uiManager.GetComponent<GamePlayUI>().isInMainMenu = false;
         PersistenceDataManager.instance.NewGame();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
 
     public void LoudGame(){
-        //SceneManager.LoadScene(4);
+        uiManager.GetComponent<GamePlayUI>().isInMainMenu = false;
         ReturnJump.Jump();
         PersistenceDataManager.instance.LoadGame();
     }

@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] public GameObject managers;
     [SerializeField] public GameObject inventory;
-    [SerializeField] public GameObject camera;
+    [SerializeField] public GameObject mainCamera;
     [SerializeField] public GameObject eventSystem;
 
     void Awake()
@@ -21,12 +21,12 @@ public class LevelManager : MonoBehaviour
             spawned = true;
             DontDestroyOnLoad(player);
             DontDestroyOnLoad(managers);
-            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(mainCamera);
             DontDestroyOnLoad(eventSystem);
         } else {
             Destroy(player);
             Destroy(managers);
-            Destroy(camera);
+            Destroy(mainCamera);
             Destroy(eventSystem);
             Destroy(gameObject);
         }
@@ -36,29 +36,20 @@ public class LevelManager : MonoBehaviour
         {
             // Subscribe to the sceneLoaded event
             SceneManager.sceneLoaded += OnSceneLoaded;
+            Time.timeScale = 0f;
         }
 
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             // Check if the loaded scene is not a menu scene
-            if (scene.buildIndex != 5 && scene.buildIndex != 6)
+            if (scene.buildIndex != 5 && scene.buildIndex != 6 && scene.buildIndex != 7)
             {
-                // Activate player and camera
-                //player.SetActive(true);
-                //player.GetComponent<Rigidbody2D>().FreezeX = false;
-                //player.GetComponent<Rigidbody2D>().FreezeY = false;
-                //Time.timeScale = 0f;
+                // Activate time
                 Time.timeScale = 1f;
-                camera.SetActive(true);
             }
             else
             {
-                // Deactivate player and camera
-                //player.SetActive(false);
-                //player.GetComponent<Rigidbody2D>().FreezeX = true;
-                //player.GetComponent<Rigidbody2D>().FreezeY = true;
                 Time.timeScale = 0f;
-                camera.SetActive(false);
             }
         }
 

@@ -37,8 +37,7 @@ public class PersistenceDataManager : MonoBehaviour
     }
 
     public bool IsSave(){
-    Set();
-    Debug.Log(dataHandler);
+        Set();
         if (File.Exists(dataHandler.GetSaveFilePath()))
         {
             return true;
