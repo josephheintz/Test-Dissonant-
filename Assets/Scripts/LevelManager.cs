@@ -1,29 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     private static bool spawned = false;
-    [SerializeField] public GameObject Player;
-    [SerializeField] public GameObject Managers;
-    [SerializeField] public GameObject Inventory;
-    [SerializeField] public GameObject Camera;
-    [SerializeField] public GameObject EventSystem;
+    [SerializeField] public GameObject player;
+    [SerializeField] public GameObject managers;
+    [SerializeField] public GameObject inventory;
+    [SerializeField] public GameObject mainCamera;
+    [SerializeField] public GameObject eventSystem;
 
     void Awake()
     {
+        //if (scene.buildIndex != 5 && scene.buildIndex != 6) Time.timeScale = 0f;
+        Time.timeScale = 0f;
+
         if(spawned == false){
             spawned = true;
-            DontDestroyOnLoad(Player);
-            DontDestroyOnLoad(Managers);
-            DontDestroyOnLoad(Camera);
-            DontDestroyOnLoad(EventSystem);
+            DontDestroyOnLoad(player);
+            DontDestroyOnLoad(managers);
+            DontDestroyOnLoad(mainCamera);
+            DontDestroyOnLoad(eventSystem);
         } else {
-            Destroy(Player);
-            Destroy(Managers);
-            Destroy(Camera);
-            Destroy(EventSystem);
+            Destroy(player);
+            Destroy(managers);
+            Destroy(mainCamera);
+            Destroy(eventSystem);
+            Destroy(gameObject);
         }
     }
+
+        void Start()
+        {
+            // Subscribe to the sceneLoaded event
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            Time.timeScale = 0f;
+        }
+
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            // Check if the loaded scene is not a menu scene
+            if (scene.buildIndex != 5 && scene.buildIndex != 6 && scene.buildIndex != 7)
+            {
+                // Activate time
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                Time.timeScale = 0f;
+            }
+        }
+
+        void OnDestroy()
+        {
+            // Unsubscribe from the sceneLoaded event
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
 }

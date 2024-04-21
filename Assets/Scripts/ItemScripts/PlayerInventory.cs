@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
-public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : MonoBehaviour, IDataPersistence
 {
     // Reference to the InventoryObject scriptable object
     public InventoryObject inventory;
@@ -35,6 +36,14 @@ public class PlayerInventory : MonoBehaviour
             // Destroy the collided object
             Destroy(other.gameObject);
         }
+    }
+
+    public void LoadData(SaveData data){
+        for (int i = 0; i < inventory.Container.Count; i++) this.inventory.Container[i].amount = data.playerResources[i];
+
+    }
+    public void SaveData(ref SaveData data){
+        for (int i = 0; i < inventory.Container.Count; i++) data.playerResources[i] = this.inventory.Container[i].amount;
     }
 
     // OnApplicationQuit is called when the application is about to quit
