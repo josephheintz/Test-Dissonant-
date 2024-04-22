@@ -1014,7 +1014,7 @@ Transform:
   m_GameObject: {fileID: 456769247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.3, y: -0.8, z: 0}
+  m_LocalPosition: {x: -26.3, y: -3.46, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1032,7 +1032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33b4be2bb516414595c778b93a5633b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   isFlipped: 0
 --- !u!95 &456769255
 Animator:
@@ -1491,7 +1490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33b4be2bb516414595c778b93a5633b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   isFlipped: 0
 --- !u!95 &800420288
 Animator:
@@ -1941,7 +1939,7 @@ Rigidbody2D:
   m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2059,7 +2057,7 @@ Transform:
   m_GameObject: {fileID: 1081142612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.7, y: -1.1, z: 0}
+  m_LocalPosition: {x: -22.5, y: -3.44, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2077,7 +2075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33b4be2bb516414595c778b93a5633b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   isFlipped: 0
 --- !u!95 &1081142620
 Animator:
@@ -2616,7 +2613,7 @@ Transform:
   m_GameObject: {fileID: 1879769642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.9, y: -1.1, z: 0}
+  m_LocalPosition: {x: -15.64, y: -3.46, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2634,7 +2631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33b4be2bb516414595c778b93a5633b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   isFlipped: 0
 --- !u!95 &1879769650
 Animator:
@@ -2877,7 +2873,7 @@ Transform:
   m_GameObject: {fileID: 1932970563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.4, y: 0.1, z: 0}
+  m_LocalPosition: {x: -19.14, y: -3.47, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2916,7 +2912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33b4be2bb516414595c778b93a5633b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   isFlipped: 0
 --- !u!1001 &2001575016
 PrefabInstance:
@@ -2926,13 +2921,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 907409305363738621, guid: beb8d615ddbce4c8e945d0b8558ff766, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3019975053882725397, guid: beb8d615ddbce4c8e945d0b8558ff766, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.958375
+      value: -12.08
       objectReference: {fileID: 0}
     - target: {fileID: 3019975053882725397, guid: beb8d615ddbce4c8e945d0b8558ff766, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9346514
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3019975053882725397, guid: beb8d615ddbce4c8e945d0b8558ff766, type: 3}
       propertyPath: m_LocalPosition.z
