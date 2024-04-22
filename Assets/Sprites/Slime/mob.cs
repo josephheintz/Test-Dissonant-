@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class mob : MonoBehaviour
 {
-
-    public Transform player;
-
     public bool isFlipped = false;
 
-    public void LookAtPlayer()
+    // Update is called once per frame
+    void Update()
     {
+        // Find the player dynamically during runtime
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        // Check if the player object is found
+        if (playerObject != null)
+        {
+            // Get the player's Transform component
+            Transform player = playerObject.transform;
+
+            // Call the method to make the mob face the player
+            LookAtPlayer(player);
+        }
+    }
+
+    public void LookAtPlayer(Transform player)
+    {
+        if (player == null)
+            return;
+
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
@@ -27,5 +44,4 @@ public class mob : MonoBehaviour
             isFlipped = true;
         }
     }
-
 }
