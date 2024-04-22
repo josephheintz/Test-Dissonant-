@@ -130,6 +130,9 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        // Start the Audio manager
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -150,7 +153,6 @@ public class PlayerController : MonoBehaviour
     {
         pState = GetComponent<PlayerStateList>();
 
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -229,6 +231,9 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(xAxis * walkSpeed, rb.velocity.y);
         anim.SetBool("Running", rb.velocity.x != 0 && IsGrounded());
+        if (rb.velocity.x != 0 && IsGrounded()) {
+            audioManager.PlaySFX(audioManager.walk);
+        }
     }
 
     void StartDash()
