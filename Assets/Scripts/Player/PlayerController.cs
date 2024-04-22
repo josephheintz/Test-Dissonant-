@@ -122,6 +122,8 @@ public class PlayerController : MonoBehaviour
     private float xAxis, yAxis;
     private bool attacking = false;
 
+    AudioManager audioManager; 
+
 
     public static PlayerController Instance;
 
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
         Health = maxHealth;
 
         DontDestroyOnLoad(gameObject);
+
     }
 
 
@@ -146,6 +149,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         pState = GetComponent<PlayerStateList>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         rb = GetComponent<Rigidbody2D>();
 

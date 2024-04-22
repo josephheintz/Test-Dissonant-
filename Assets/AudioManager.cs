@@ -11,4 +11,15 @@ public class AudioManager : MonoBehaviour
     [Header("---------------Audio Clip-----------------")]
 
     public AudioClip menuMusic;
+    public AudioClip walk;
+
+    public void Awake()
+    {
+        musicSource.clip = menuMusic;
+        musicSource.Play();
+    }
+
+    public void PlaySFX(AudioClip clip) {
+        sfxSource.PlayOneShot(clip);
+    }
 }
