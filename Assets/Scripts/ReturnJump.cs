@@ -40,7 +40,15 @@ public class ReturnJump : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         SceneManager.LoadScene(1);
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        player.transform.position = new Vector2(0, 2);
+        player.transform.position = new Vector2(15, 2);
+    }
+
+    public static void JumpToStart()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        SceneManager.LoadScene(4);
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        player.transform.position = new Vector2(-45, -2);
     }
 
 }

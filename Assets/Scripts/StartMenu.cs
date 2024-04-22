@@ -30,7 +30,8 @@ public class StartMenu : MonoBehaviour
     public void NewGame(){
         uiManager.GetComponent<GamePlayUI>().isInMainMenu = false;
         PersistenceDataManager.instance.NewGame();
-        SceneManager.LoadScene(4);
+        //SceneManager.LoadScene(4);
+        ReturnJump.JumpToStart();
     }
 
     public void LoudGame(){
