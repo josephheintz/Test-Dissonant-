@@ -6,16 +6,19 @@ public class FadeIn : MonoBehaviour
 {
     [SerializeField] private RawImage blackOut; // Change this to RawImage type
     [SerializeField] private GameObject blackOutCanvas; // Reference to the Canvas or the parent GameObject of RawImage
+    AudioManager audioManager;
 
 
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         blackOutCanvas.SetActive(true);
         StartCoroutine(FadeInCoroutine());
     }
 
     IEnumerator FadeInCoroutine()
     {
+        audioManager.PlaySFX(audioManager.portalIn);
         Color color = blackOut.color;
         while (color.a > 0)
         {

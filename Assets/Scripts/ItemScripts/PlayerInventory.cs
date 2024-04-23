@@ -14,9 +14,11 @@ public class PlayerInventory : MonoBehaviour, IDataPersistence
     // Boolean flag to determine whether to clear the inventory on quit
     [SerializeField] public bool clear = true;
 
+    AudioManager audioManager;
     // Start is called before the first frame update
     public void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         // Find the player object in the scene by tag
         GameObject playerPrefab = GameObject.FindGameObjectWithTag("Player");
     }
@@ -32,6 +34,7 @@ public class PlayerInventory : MonoBehaviour, IDataPersistence
         {
             // Add the gear from the item to the inventory
             inventory.AddGear(item.gear, 1);
+            audioManager.PlaySFX(audioManager.itemPickup);
 
             // Destroy the collided object
             Destroy(other.gameObject);
