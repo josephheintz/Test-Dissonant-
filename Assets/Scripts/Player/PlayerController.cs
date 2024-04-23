@@ -269,6 +269,7 @@ public class PlayerController : MonoBehaviour
         {
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
+            audioManager.PlaySFX(audioManager.playerAttack);
 
             if (yAxis == 0 || yAxis < 0 && IsGrounded())
             {

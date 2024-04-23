@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
+    AudioManager audioManager;
     // Start is called before the first frame update
     protected override void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         base.Start();
         rb.gravityScale = 12f;
     }
@@ -33,6 +35,7 @@ public class Slime : Enemy
     {
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
         animator.SetTrigger("TakeDamage");
+        audioManager.PlaySFX(audioManager.slimeTakeDamage);
     }
     IEnumerator DestroyAfterDelay()
     {
