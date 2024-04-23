@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,15 +12,48 @@ public class AudioManager : MonoBehaviour
     [Header("---------------Audio Clip-----------------")]
 
     public AudioClip menuMusic;
-    public AudioClip walk;
+    public AudioClip fantasyMusic;
+    public AudioClip hubMusic;
+    public AudioClip playerJump;
+    public AudioClip playerAttack;
+    public AudioClip playerTakeDamage;
+    public AudioClip itemPickup;
+    public AudioClip portalIn;
+    public AudioClip portalOut;
 
-    public void Awake()
+    void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the sceneLoaded event
         musicSource.clip = menuMusic;
-        musicSource.Play();
+        musicSource.Play(); // Play menu music by default
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        musicSource.Stop();
+        // Check the scene name and play the corresponding music
+        if (scene.name == "StartScreen")
+        {
+            musicSource.clip = menuMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "HubStart")
+        {
+            
+        }
+    }
+
+    
+
+    // Unsubscribe from the event when the object is destroyed
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
     public void PlaySFX(AudioClip clip) {
-        sfxSource.PlayOneShot(clip);
+        sfxSource.clip = clip;
+        sfxSource.Play();
     }
 }

@@ -1364,7 +1364,14 @@ MonoBehaviour:
   musicSource: {fileID: 330325372}
   sfxSource: {fileID: 826348506}
   menuMusic: {fileID: 8300000, guid: cc477da07a0e95340a4e0638d3853865, type: 3}
-  walk: {fileID: 8300000, guid: ecd647025e0a3c04fbd5829fff509e09, type: 3}
+  fantasyMusic: {fileID: 0}
+  hubMusic: {fileID: 0}
+  playerJump: {fileID: 8300000, guid: 6aeefb601c305f64487cebdfacae5b6c, type: 3}
+  playerAttack: {fileID: 0}
+  playerTakeDamage: {fileID: 0}
+  itemPickup: {fileID: 0}
+  portalIn: {fileID: 0}
+  portalOut: {fileID: 0}
 --- !u!4 &251519729
 Transform:
   m_ObjectHideFlags: 0

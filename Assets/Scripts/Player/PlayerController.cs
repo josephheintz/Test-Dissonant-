@@ -231,9 +231,6 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(xAxis * walkSpeed, rb.velocity.y);
         anim.SetBool("Running", rb.velocity.x != 0 && IsGrounded());
-        if (rb.velocity.x != 0 && IsGrounded()) {
-            audioManager.PlaySFX(audioManager.walk);
-        }
     }
 
     void StartDash()
@@ -560,6 +557,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
             pState.jumping = true;
+            audioManager.PlaySFX(audioManager.playerJump);
         }
         if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && canDoubleJump)
         {
@@ -568,6 +566,7 @@ public class PlayerController : MonoBehaviour
             airJumpCounter++;
 
             rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+            audioManager.PlaySFX(audioManager.playerJump);
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 3)
@@ -575,6 +574,7 @@ public class PlayerController : MonoBehaviour
             pState.jumping = false;
 
             rb.velocity = new Vector2(rb.velocity.x, 0);
+            audioManager.PlaySFX(audioManager.playerJump);
         }
 
         anim.SetBool("Jumping", !IsGrounded());
