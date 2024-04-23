@@ -9,17 +9,20 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource sfxSource;
 
-    [Header("---------------Audio Clip-----------------")]
-
+    [Header("---------------Music-----------------")]
     public AudioClip menuMusic;
     public AudioClip fantasyMusic;
     public AudioClip hubMusic;
+    public AudioClip hub1Music;
+    [Header("--------------Player Sounds---------------")]
     public AudioClip playerJump;
     public AudioClip playerAttack;
     public AudioClip playerTakeDamage;
     public AudioClip itemPickup;
     public AudioClip portalIn;
     public AudioClip portalOut;
+    [Header("--------------Mob Sounds---------------")]
+    public AudioClip slimeTakeDamage;
 
     void Start()
     {
@@ -39,7 +42,13 @@ public class AudioManager : MonoBehaviour
         }
         else if (scene.name == "HubStart")
         {
-            
+            musicSource.clip = hubMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "Hub1")
+        {
+            musicSource.clip = hub1Music;
+            musicSource.Play();
         }
     }
 
