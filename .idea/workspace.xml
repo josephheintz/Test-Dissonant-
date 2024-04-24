@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Medieval King Pack 2/Scripts/Boss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Medieval King Pack 2/Scripts/Boss.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemys00/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemys00/Slime.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemys00/Slime.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemys00/Slime.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AttackScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AttackScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Slime/mob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Slime/mob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasfors/RetunTeleporter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tasfors/RetunTeleporter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Fantasy/FantasyLevelOne.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Fantasy/FantasyLevelOne.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hub/Hub1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hub/Hub1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hub/HubStart.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

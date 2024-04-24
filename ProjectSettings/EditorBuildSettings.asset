@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BrightForest.unity
     guid: 71dee4b8e9971474792f586807fb8a09
   - enabled: 1
-    path: Assets/Worlds/Fantasy/FantasyLevelOne.unity
+    path: Assets/Worlds/Fantasy/OuterGarden.unity
     guid: 7929073eb05594a53bdba600d6ae2e67
   - enabled: 1
     path: Assets/Worlds/Hub/HubStart.unity
@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Screens/MainScreen.unity
     guid: 2abdb40cba27d48c8805fb026a36fd15
+  - enabled: 1
+    path: Assets/Worlds/Fantasy/TreeTop.unity
+    guid: 64ea3906bcefe4ac78bc1841ecbd0709
+  - enabled: 1
+    path: Assets/Worlds/Fantasy/RockRoots.unity
+    guid: 7ba74398be11b414cb31839606f1f791
   m_configObjects: {}
