@@ -67,7 +67,6 @@ public class ButtonPopUp : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         // Detect player leaving trigger area
-
         if (other.CompareTag("Player"))
         {
             playerInsideTrigger = false; // Player is not inside trigger
