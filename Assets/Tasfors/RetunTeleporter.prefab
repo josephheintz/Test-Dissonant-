@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6492592746494437713}
   - component: {fileID: 2858519663219800466}
   - component: {fileID: 2136965037312567844}
-  - component: {fileID: 7035231193606893360}
   - component: {fileID: 5384274019495792574}
   m_Layer: 0
   m_Name: Cube
@@ -85,27 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7035231193606893360
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036386455198909393}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!122 &5384274019495792574
 Halo:
   m_ObjectHideFlags: 0
@@ -197,7 +175,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -226,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackOut: {fileID: 5042526908748388413}
+  TelaIndex: 0
 --- !u!1 &2195678323105569469
 GameObject:
   m_ObjectHideFlags: 0
