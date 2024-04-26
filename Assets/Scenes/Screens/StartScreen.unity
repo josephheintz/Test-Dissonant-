@@ -1365,7 +1365,7 @@ MonoBehaviour:
   sfxSource: {fileID: 826348506}
   menuMusic: {fileID: 8300000, guid: 0e25ae19f9e1665498cb3aea87aa23e7, type: 3}
   OuterGardenMusic: {fileID: 8300000, guid: 2ccc481475ec7e54c83a6db01256dace, type: 3}
-  treeTopMusic: {fileID: 0}
+  treeTopMusic: {fileID: 8300000, guid: dd8041f40204bdb46a2894173ddbe56d, type: 3}
   hubMusic: {fileID: 8300000, guid: 59ea8696d201cf2418ca44db9a3491ad, type: 3}
   hub1Music: {fileID: 8300000, guid: e825a58f4b18d9c4396b256abc407387, type: 3}
   playerJump: {fileID: 8300000, guid: 6aeefb601c305f64487cebdfacae5b6c, type: 3}

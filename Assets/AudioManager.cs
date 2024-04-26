@@ -57,6 +57,12 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = OuterGardenMusic;
             musicSource.Play();
         }
+        else if (scene.name == "TreeTop")
+        {
+            musicSource.clip = treeTopMusic;
+            musicSource.Play();
+        }
+
     }
 
     
