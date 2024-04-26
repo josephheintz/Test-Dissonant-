@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip portalOut;
     [Header("--------------Mob Sounds---------------")]
     public AudioClip slimeTakeDamage;
+    public AudioClip slimeDeath;
 
     void Start()
     {

@@ -35,10 +35,19 @@ public class Slime : Enemy
     {
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
         animator.SetTrigger("TakeDamage");
-        audioManager.PlaySFX(audioManager.slimeTakeDamage);
+        if (health > 0)
+        {
+            audioManager.PlaySFX(audioManager.slimeTakeDamage);
+        }
+        else
+        {
+            audioManager.PlaySFX(audioManager.slimeDeath);
+        }
+        
     }
     IEnumerator DestroyAfterDelay()
     {
+        
         yield return new WaitForSecondsRealtime(1f); // Wait for 1 second after animation finishes
         Destroy(gameObject); // Destroy the game object
     }
