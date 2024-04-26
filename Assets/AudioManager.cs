@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip castleMusic;
     public AudioClip hubMusic;
     public AudioClip hub1Music;
+    public AudioClip dockingBayMusic;
     [Header("--------------Player Sounds---------------")]
     public AudioClip playerJump;
     public AudioClip playerAttack;
@@ -75,6 +76,11 @@ public class AudioManager : MonoBehaviour
         else if (scene.name == "Castle")
         {
             musicSource.clip = castleMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "DockingBay")
+        {
+            musicSource.clip = dockingBayMusic;
             musicSource.Play();
         }
 
