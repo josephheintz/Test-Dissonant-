@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip menuMusic;
     public AudioClip OuterGardenMusic;
     public AudioClip treeTopMusic;
+    public AudioClip rockRootMusic;
+    public AudioClip castleMusic;
     public AudioClip hubMusic;
     public AudioClip hub1Music;
     [Header("--------------Player Sounds---------------")]
@@ -60,6 +62,16 @@ public class AudioManager : MonoBehaviour
         else if (scene.name == "TreeTop")
         {
             musicSource.clip = treeTopMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "RockRoots")
+        {
+            musicSource.clip = rockRootMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "Castle")
+        {
+            musicSource.clip = castleMusic;
             musicSource.Play();
         }
 
