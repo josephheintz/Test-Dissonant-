@@ -5,7 +5,7 @@ public class Skeleton_Run : StateMachineBehaviour
     public float speed = 2.5f;
     public float attackRange = 3f;
     public float attackCooldown = 4f; // Adjust this value to control the attack cooldown
-    public float maxRange = 5f; // Maximum range for the mob's movement towards the enemy
+    public float maxRange = 15f; // Maximum range for the mob's movement towards the enemy
 
     Transform player;
     Rigidbody2D rb;
@@ -23,6 +23,11 @@ public class Skeleton_Run : StateMachineBehaviour
         boss = animator.GetComponent<Boss>();
         hasAttacked = false; // Reset the attack flag when entering the state
         // nextAttackTime = Time.time; // Initialize nextAttackTime to current time
+        float distanceToPlayer = Vector2.Distance(rb.position, player.position);
+        if (distanceToPlayer <= maxRange)
+        {
+            animator.SetBool("Prox", false);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -34,25 +39,32 @@ public class Skeleton_Run : StateMachineBehaviour
         float distanceToPlayer = Vector2.Distance(rb.position, player.position);
         if (distanceToPlayer <= maxRange)
         {
+            animator.SetBool("Prox", true);
             Vector2 target = new Vector2(player.position.x, rb.position.y);
             Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
             rb.MovePosition(newPos);
+
+            // Check if it's time for the boss to attack based on the cooldown
+            if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
+            {
+                animator.SetTrigger("Attack");
+                audioManager.PlayMSFX(audioManager.skeletonAttack);
+                hasAttacked = true; // Set the flag to true to prevent continuous attacks
+                nextAttackTime = Time.time + attackCooldown; // Set the next attack time
+
+            }
+            // Update the nextAttackTime if the boss hasn't attacked yet
+            if (hasAttacked)
+            {
+                nextAttackTime = Time.time + attackCooldown; // Set the next attack time
+            }
+        }
+        else
+        {
+            animator.SetBool("Prox", false);
         }
 
-        // Check if it's time for the boss to attack based on the cooldown
-        if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
-        {
-            animator.SetTrigger("Attack");
-            audioManager.PlayMSFX(audioManager.skeletonAttack);
-            hasAttacked = true; // Set the flag to true to prevent continuous attacks
-            nextAttackTime = Time.time + attackCooldown; // Set the next attack time
-
-        }
-        // Update the nextAttackTime if the boss hasn't attacked yet
-        if (hasAttacked)
-        {
-            nextAttackTime = Time.time + attackCooldown; // Set the next attack time
-        }
+       
     }
 
 
