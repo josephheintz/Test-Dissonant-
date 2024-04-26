@@ -48,7 +48,6 @@ public class Skeleton_Run : StateMachineBehaviour
             if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
             {
                 animator.SetTrigger("Attack");
-                audioManager.PlayMSFX(audioManager.skeletonAttack);
                 hasAttacked = true; // Set the flag to true to prevent continuous attacks
                 nextAttackTime = Time.time + attackCooldown; // Set the next attack time
 
@@ -56,6 +55,7 @@ public class Skeleton_Run : StateMachineBehaviour
             // Update the nextAttackTime if the boss hasn't attacked yet
             if (hasAttacked)
             {
+                audioManager.PlayMSFX(audioManager.skeletonAttack);
                 nextAttackTime = Time.time + attackCooldown; // Set the next attack time
             }
         }

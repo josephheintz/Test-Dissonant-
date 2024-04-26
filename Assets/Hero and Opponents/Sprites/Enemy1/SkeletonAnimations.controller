@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   attackRange: 3
-  attackCooldown: 4
+  attackCooldown: 1
   maxRange: 10
 --- !u!114 &4394179208792504470
 MonoBehaviour:
