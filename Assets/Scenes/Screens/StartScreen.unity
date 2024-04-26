@@ -1309,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 350
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2795,7 +2795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20
+      value: -140
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3055,7 +3055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -90
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4024,7 +4024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 130
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4811,7 +4811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 240
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7458679798864901402, guid: 49b609b676c38426baa969809045d2f4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6540,9 +6540,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -6689,8 +6689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 105, y: 222.5}
-  m_SizeDelta: {x: -210, y: -755}
+  m_AnchoredPosition: {x: 260.72034, y: 290}
+  m_SizeDelta: {x: -588.5593, y: -680}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1445514174
 MonoBehaviour:
@@ -6699,7 +6699,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445514172}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
