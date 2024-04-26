@@ -18,6 +18,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip hubMusic;
     public AudioClip hub1Music;
     public AudioClip dockingBayMusic;
+    public AudioClip AICoreMusic;
+    public AudioClip hiveMusic;
+    public AudioClip reactorMusic;
     [Header("--------------Player Sounds---------------")]
     public AudioClip playerJump;
     public AudioClip playerAttack;
@@ -81,6 +84,21 @@ public class AudioManager : MonoBehaviour
         else if (scene.name == "DockingBay")
         {
             musicSource.clip = dockingBayMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "Hive")
+        {
+            musicSource.clip = hiveMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "AICore")
+        {
+            musicSource.clip = AICoreMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "Reactor")
+        {
+            musicSource.clip = reactorMusic;
             musicSource.Play();
         }
 
