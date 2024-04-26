@@ -29,6 +29,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip livingRuinMusic;
     public AudioClip theKingMusic;
     public AudioClip theRightHandMusic;
+    [Header("--------------Ocean Music----------------------")]
+    public AudioClip farShoreMusic;
+    public AudioClip iceyCaveMusic;
+    public AudioClip iceyShoreMusic;
+    public AudioClip theDeepMusic;
     [Header("--------------Player Sounds----------------------")]
     public AudioClip playerJump;
     public AudioClip playerAttack;
@@ -129,7 +134,26 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = theRightHandMusic;
             musicSource.Play();
         }
-
+        else if (scene.name == "FarShore")
+        {
+            musicSource.clip = farShoreMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "IceyCave")
+        {
+            musicSource.clip = iceyCaveMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "IceyShore")
+        {
+            musicSource.clip = iceyShoreMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "TheDeep")
+        {
+            musicSource.clip = theDeepMusic;
+            musicSource.Play();
+        }
     }
 
     
