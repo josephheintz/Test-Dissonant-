@@ -11,10 +11,12 @@ public class Boss_Run : StateMachineBehaviour
     Boss boss;
     bool hasAttacked = false;
     float nextAttackTime; // Time when the boss can attack again
+    AudioManager audioManager;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
@@ -26,6 +28,7 @@ public class Boss_Run : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss.LookAtPlayer();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
@@ -35,6 +38,7 @@ public class Boss_Run : StateMachineBehaviour
         if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
+            audioManager.PlaySFX(audioManager.fantasyBossAttack);
             hasAttacked = true; // Set the flag to true to prevent continuous attacks
             nextAttackTime = Time.time + attackCooldown; // Set the next attack time
          

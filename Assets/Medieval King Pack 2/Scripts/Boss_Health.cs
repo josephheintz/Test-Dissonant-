@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BossHealth : Enemy
 {
+    AudioManager audioManager;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         rb.gravityScale = 12f;
-        
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class BossHealth : Enemy
         {
             animator.SetBool("StillAlive", false);
             animator.SetTrigger("Fall");
+            audioManager.PlaySFX(audioManager.fantasyBossDeath);
             StartCoroutine(DestroyAfterDelay());
         }
     }
@@ -29,6 +31,7 @@ public class BossHealth : Enemy
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
         
         animator.SetTrigger("TakeDamage");
+        audioManager.PlaySFX(audioManager.fantasyBossDamage);
     }
 
     public void Die()

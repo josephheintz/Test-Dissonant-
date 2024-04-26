@@ -11,7 +11,10 @@ public class AudioManager : MonoBehaviour
 
     [Header("---------------Music-----------------")]
     public AudioClip menuMusic;
-    public AudioClip fantasyMusic;
+    public AudioClip OuterGardenMusic;
+    public AudioClip treeTopMusic;
+    public AudioClip rockRootMusic;
+    public AudioClip castleMusic;
     public AudioClip hubMusic;
     public AudioClip hub1Music;
     [Header("--------------Player Sounds---------------")]
@@ -23,6 +26,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip portalOut;
     [Header("--------------Mob Sounds---------------")]
     public AudioClip slimeTakeDamage;
+    public AudioClip slimeDeath;
+    public AudioClip fantasyBossDamage;
+    public AudioClip fantasyBossAttack;
+    public AudioClip fantasyBossDeath;
 
     void Start()
     {
@@ -50,6 +57,27 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = hub1Music;
             musicSource.Play();
         }
+        else if (scene.name == "OuterGarden")
+        {
+            musicSource.clip = OuterGardenMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "TreeTop")
+        {
+            musicSource.clip = treeTopMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "RockRoots")
+        {
+            musicSource.clip = rockRootMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "Castle")
+        {
+            musicSource.clip = castleMusic;
+            musicSource.Play();
+        }
+
     }
 
     
