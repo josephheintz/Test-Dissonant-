@@ -11,17 +11,25 @@ public class AudioManager : MonoBehaviour
 
     [Header("---------------Music-----------------")]
     public AudioClip menuMusic;
+    [Header("---------------Fantasy Music---------------")]
     public AudioClip OuterGardenMusic;
     public AudioClip treeTopMusic;
     public AudioClip rockRootMusic;
     public AudioClip castleMusic;
+    [Header("-------------Hub Music-----------------")]
     public AudioClip hubMusic;
     public AudioClip hub1Music;
+    [Header("-------------Sci-Fi Music----------------------")]
     public AudioClip dockingBayMusic;
     public AudioClip AICoreMusic;
     public AudioClip hiveMusic;
     public AudioClip reactorMusic;
-    [Header("--------------Player Sounds---------------")]
+    [Header("-------------Hell Music-------------------------")]
+    public AudioClip fireFallMusic;
+    public AudioClip livingRuinMusic;
+    public AudioClip theKingMusic;
+    public AudioClip theRightHandMusic;
+    [Header("--------------Player Sounds----------------------")]
     public AudioClip playerJump;
     public AudioClip playerAttack;
     public AudioClip playerTakeDamage;
@@ -99,6 +107,26 @@ public class AudioManager : MonoBehaviour
         else if (scene.name == "Reactor")
         {
             musicSource.clip = reactorMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "FireFall")
+        {
+            musicSource.clip = dockingBayMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "LiveingRuin")
+        {
+            musicSource.clip = livingRuinMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "TheKing")
+        {
+            musicSource.clip = theKingMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "TheRightHand")
+        {
+            musicSource.clip = theRightHandMusic;
             musicSource.Play();
         }
 
