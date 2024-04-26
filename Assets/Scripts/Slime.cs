@@ -37,11 +37,11 @@ public class Slime : Enemy
         animator.SetTrigger("TakeDamage");
         if (health > 0)
         {
-            audioManager.PlaySFX(audioManager.slimeTakeDamage);
+            audioManager.PlayMSFX(audioManager.slimeTakeDamage);
         }
         else
         {
-            audioManager.PlaySFX(audioManager.slimeDeath);
+            audioManager.PlayMSFX(audioManager.slimeDeath);
         }
         
     }

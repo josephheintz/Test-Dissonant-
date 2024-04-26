@@ -4,7 +4,7 @@ public class Boss_Run : StateMachineBehaviour
 {
     public float speed = 2.5f;
     public float attackRange = 3f;
-    public float attackCooldown = 20f; // Adjust this value to control the attack cooldown
+    public float attackCooldown = 5f; // Adjust this value to control the attack cooldown
 
     Transform player;
     Rigidbody2D rb;
@@ -38,7 +38,7 @@ public class Boss_Run : StateMachineBehaviour
         if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
-            audioManager.PlaySFX(audioManager.fantasyBossAttack);
+            audioManager.PlayMSFX(audioManager.fantasyBossAttack);
             hasAttacked = true; // Set the flag to true to prevent continuous attacks
             nextAttackTime = Time.time + attackCooldown; // Set the next attack time
          

@@ -7,17 +7,36 @@ public class AudioManager : MonoBehaviour
 {
     [Header("---------------Audio Source---------------")]
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sfxSource;
+    [SerializeField] AudioSource playerSFXSource;
+    [SerializeField] AudioSource WorldSFXSource;
+    [SerializeField] AudioSource mobSFXSource;
 
     [Header("---------------Music-----------------")]
     public AudioClip menuMusic;
+    [Header("---------------Fantasy Music---------------")]
     public AudioClip OuterGardenMusic;
     public AudioClip treeTopMusic;
     public AudioClip rockRootMusic;
     public AudioClip castleMusic;
+    [Header("-------------Hub Music-----------------")]
     public AudioClip hubMusic;
     public AudioClip hub1Music;
-    [Header("--------------Player Sounds---------------")]
+    [Header("-------------Sci-Fi Music----------------------")]
+    public AudioClip dockingBayMusic;
+    public AudioClip AICoreMusic;
+    public AudioClip hiveMusic;
+    public AudioClip reactorMusic;
+    [Header("-------------Hell Music-------------------------")]
+    public AudioClip fireFallMusic;
+    public AudioClip livingRuinMusic;
+    public AudioClip theKingMusic;
+    public AudioClip theRightHandMusic;
+    [Header("--------------Ocean Music----------------------")]
+    public AudioClip farShoreMusic;
+    public AudioClip iceyCaveMusic;
+    public AudioClip iceyShoreMusic;
+    public AudioClip theDeepMusic;
+    [Header("--------------Player Sounds----------------------")]
     public AudioClip playerJump;
     public AudioClip playerAttack;
     public AudioClip playerTakeDamage;
@@ -30,6 +49,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip fantasyBossDamage;
     public AudioClip fantasyBossAttack;
     public AudioClip fantasyBossDeath;
+    public AudioClip skeletonDamage;
+    public AudioClip skeletonAttack;
+    public AudioClip skeletonDeath;
 
     void Start()
     {
@@ -77,7 +99,66 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = castleMusic;
             musicSource.Play();
         }
-
+        else if (scene.name == "DockingBay")
+        {
+            musicSource.clip = dockingBayMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "Hive")
+        {
+            musicSource.clip = hiveMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "AICore")
+        {
+            musicSource.clip = AICoreMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "Reactor")
+        {
+            musicSource.clip = reactorMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "FireFall")
+        {
+            musicSource.clip = fireFallMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "LiveingRuin")
+        {
+            musicSource.clip = livingRuinMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "TheKing")
+        {
+            musicSource.clip = theKingMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "TheRightHand")
+        {
+            musicSource.clip = theRightHandMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "FarShore")
+        {
+            musicSource.clip = farShoreMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "IceyCave")
+        {
+            musicSource.clip = iceyCaveMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "IceyShore")
+        {
+            musicSource.clip = iceyShoreMusic;
+            musicSource.Play();
+        }
+        else if (scene.name == "TheDeep")
+        {
+            musicSource.clip = theDeepMusic;
+            musicSource.Play();
+        }
     }
 
     
@@ -89,8 +170,18 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void PlaySFX(AudioClip clip) {
-        sfxSource.clip = clip;
-        sfxSource.Play();
+    public void PlayPSFX(AudioClip clip) {
+        playerSFXSource.clip = clip;
+        playerSFXSource.Play();
+    }
+    public void PlayWSFX(AudioClip clip)
+    {
+        WorldSFXSource.clip = clip;
+        WorldSFXSource.Play();
+    }
+    public void PlayMSFX(AudioClip clip)
+    {
+        mobSFXSource.clip = clip;
+        mobSFXSource.Play();
     }
 }

@@ -26,7 +26,7 @@ public class BossHealth : Enemy
             levelManager.GetComponent<TeleportTracker>().bosses[bossIndex] = true;
             animator.SetBool("StillAlive", false);
             animator.SetTrigger("Fall");
-            audioManager.PlaySFX(audioManager.fantasyBossDeath);
+            audioManager.PlayMSFX(audioManager.fantasyBossDeath);
             StartCoroutine(DestroyAfterDelay());
         }
     }
@@ -36,7 +36,7 @@ public class BossHealth : Enemy
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
         
         animator.SetTrigger("TakeDamage");
-        audioManager.PlaySFX(audioManager.fantasyBossDamage);
+        audioManager.PlayMSFX(audioManager.fantasyBossDamage);
     }
 
     public void Die()

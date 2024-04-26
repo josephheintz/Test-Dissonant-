@@ -18,7 +18,7 @@ public class FadeIn : MonoBehaviour
 
     IEnumerator FadeInCoroutine()
     {
-        audioManager.PlaySFX(audioManager.portalIn);
+        audioManager.PlayWSFX(audioManager.portalIn);
         Color color = blackOut.color;
         while (color.a > 0)
         {
