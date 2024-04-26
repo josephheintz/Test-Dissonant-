@@ -15,6 +15,63 @@ EditorBuildSettings:
     path: Assets/Scenes/BrightForest.unity
     guid: 71dee4b8e9971474792f586807fb8a09
   - enabled: 1
-    path: Assets/Worlds/Fantasy/FantasyLevelOne.unity
+    path: Assets/Worlds/Fantasy/OuterGarden.unity
     guid: 7929073eb05594a53bdba600d6ae2e67
+  - enabled: 1
+    path: Assets/Worlds/Hub/HubStart.unity
+    guid: 130e6d28e185c4ea9b385b7a5d7fca01
+  - enabled: 1
+    path: Assets/Scenes/Screens/StartScreen.unity
+    guid: 3576f6090e0b14e67bb8cf8594676997
+  - enabled: 1
+    path: Assets/Scenes/Screens/CreditsScreen.unity
+    guid: 99e13ade7497348098015c07dab83cba
+  - enabled: 1
+    path: Assets/Scenes/Screens/MainScreen.unity
+    guid: 2abdb40cba27d48c8805fb026a36fd15
+  - enabled: 1
+    path: Assets/Worlds/Fantasy/TreeTop.unity
+    guid: 64ea3906bcefe4ac78bc1841ecbd0709
+  - enabled: 1
+    path: Assets/Worlds/Fantasy/RockRoots.unity
+    guid: 7ba74398be11b414cb31839606f1f791
+  - enabled: 1
+    path: Assets/Worlds/Fantasy/Castle.unity
+    guid: 68b958156f9824334bb5f4ba2c8701a5
+  - enabled: 1
+    path: Assets/Worlds/Sci-Fi/DockingBay.unity
+    guid: f75aff90614834cdb81cdb09938f6ee2
+  - enabled: 1
+    path: Assets/Worlds/Sci-Fi/Reactor.unity
+    guid: e6abf954e42ed4ab791ae5536cd70d47
+  - enabled: 1
+    path: Assets/Worlds/Sci-Fi/Hive.unity
+    guid: 99d0cd438d41d43a69c9ba9b422f4f19
+  - enabled: 1
+    path: Assets/Worlds/Sci-Fi/AICore.unity
+    guid: 0d8a915a035fd4d7795ee6f8c4a1023d
+  - enabled: 1
+    path: Assets/Worlds/Ocean/FarShore.unity
+    guid: 809c4b5a5e90f41e7abf8793c4f1e187
+  - enabled: 1
+    path: Assets/Worlds/Ocean/IceyShore.unity
+    guid: 24682329bb89b4c4bb54e36650178711
+  - enabled: 1
+    path: Assets/Worlds/Ocean/IceyCave.unity
+    guid: 6324091d9254c47a69efa9c79bf1a47c
+  - enabled: 1
+    path: Assets/Worlds/Ocean/TheDeep.unity
+    guid: c79f24574ba0746eca85bc6807f7000c
+  - enabled: 1
+    path: Assets/Worlds/Hell/FireFall.unity
+    guid: 22c63a06a930243f599c8cac29c8c5b2
+  - enabled: 1
+    path: Assets/Worlds/Hell/LiveingRuin.unity
+    guid: a5f0178d76c3e48a7975d57524573b2d
+  - enabled: 1
+    path: Assets/Worlds/Hell/TheRightHand.unity
+    guid: 078e4f28205104604b86f9a5e8f8c299
+  - enabled: 1
+    path: Assets/Worlds/Hell/TheKing.unity
+    guid: 02f060097f7d34f81bfbff4b2fe1f972
   m_configObjects: {}

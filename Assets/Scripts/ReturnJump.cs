@@ -9,10 +9,14 @@ public class ReturnJump : MonoBehaviour
 
     [SerializeField] private RawImage blackOut; // Change this to RawImage type
     private Vector2 landing = new Vector2(0, 4); // Where the player will appear on the next map
-    private GameObject playerPrefab; // Prefab of the player object
+    private GameObject player; // Prefab of the player object
+    [SerializeField] public int TelaIndex; //
+    private GameObject levelManager; // the Managers system
 
     public void Start()
     {
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager");
+        levelManager.GetComponent<TeleportTracker>().telea[TelaIndex] = true;
         StartCoroutine(Fade());
     }
 
@@ -33,9 +37,18 @@ public class ReturnJump : MonoBehaviour
 
     public static void Jump()
     {
-        GameObject playerPrefab = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         SceneManager.LoadScene(1);
-        playerPrefab.transform.position = new Vector2(0, 2);
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        player.transform.position = new Vector2(15, 2);
+    }
+
+    public static void JumpToStart()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        SceneManager.LoadScene(4);
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        player.transform.position = new Vector2(-45, -2);
     }
 
 }

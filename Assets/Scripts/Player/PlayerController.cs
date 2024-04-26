@@ -122,12 +122,17 @@ public class PlayerController : MonoBehaviour
     private float xAxis, yAxis;
     private bool attacking = false;
 
+    AudioManager audioManager; 
+
 
     public static PlayerController Instance;
 
 
     private void Awake()
     {
+        // Start the Audio manager
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -139,6 +144,7 @@ public class PlayerController : MonoBehaviour
         Health = maxHealth;
 
         DontDestroyOnLoad(gameObject);
+
     }
 
 
@@ -146,6 +152,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         pState = GetComponent<PlayerStateList>();
+
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -262,6 +269,7 @@ public class PlayerController : MonoBehaviour
         {
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
+            audioManager.PlayPSFX(audioManager.playerAttack);
 
             if (yAxis == 0 || yAxis < 0 && IsGrounded())
             {
@@ -383,6 +391,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         Health -= Mathf.RoundToInt(_damage);
+        audioManager.PlayPSFX(audioManager.playerTakeDamage);
         StartCoroutine(StopTakingDamage());
     }
 
@@ -550,6 +559,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
             pState.jumping = true;
+            audioManager.PlayPSFX(audioManager.playerJump);
         }
         if (!IsGrounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && canDoubleJump)
         {
@@ -558,6 +568,7 @@ public class PlayerController : MonoBehaviour
             airJumpCounter++;
 
             rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+            audioManager.PlayPSFX(audioManager.playerJump);
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 3)
@@ -565,6 +576,7 @@ public class PlayerController : MonoBehaviour
             pState.jumping = false;
 
             rb.velocity = new Vector2(rb.velocity.x, 0);
+            audioManager.PlayPSFX(audioManager.playerJump);
         }
 
         anim.SetBool("Jumping", !IsGrounded());
