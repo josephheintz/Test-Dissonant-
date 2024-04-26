@@ -7,7 +7,9 @@ public class AudioManager : MonoBehaviour
 {
     [Header("---------------Audio Source---------------")]
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sfxSource;
+    [SerializeField] AudioSource playerSFXSource;
+    [SerializeField] AudioSource WorldSFXSource;
+    [SerializeField] AudioSource mobSFXSource;
 
     [Header("---------------Music-----------------")]
     public AudioClip menuMusic;
@@ -47,6 +49,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip fantasyBossDamage;
     public AudioClip fantasyBossAttack;
     public AudioClip fantasyBossDeath;
+    public AudioClip skeletonDamage;
+    public AudioClip skeletonAttack;
+    public AudioClip skeletonDeath;
 
     void Start()
     {
@@ -165,8 +170,18 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void PlaySFX(AudioClip clip) {
-        sfxSource.clip = clip;
-        sfxSource.Play();
+    public void PlayPSFX(AudioClip clip) {
+        playerSFXSource.clip = clip;
+        playerSFXSource.Play();
+    }
+    public void PlayWSFX(AudioClip clip)
+    {
+        WorldSFXSource.clip = clip;
+        WorldSFXSource.Play();
+    }
+    public void PlayMSFX(AudioClip clip)
+    {
+        mobSFXSource.clip = clip;
+        mobSFXSource.Play();
     }
 }

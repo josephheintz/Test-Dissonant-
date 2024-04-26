@@ -34,7 +34,7 @@ public class PlayerInventory : MonoBehaviour, IDataPersistence
         {
             // Add the gear from the item to the inventory
             inventory.AddGear(item.gear, 1);
-            audioManager.PlaySFX(audioManager.itemPickup);
+            audioManager.PlayPSFX(audioManager.itemPickup);
 
             // Destroy the collided object
             Destroy(other.gameObject);
