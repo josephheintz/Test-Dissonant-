@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Boss_Run : StateMachineBehaviour
+public class Skeleton_Run : StateMachineBehaviour
 {
     public float speed = 2.5f;
     public float attackRange = 3f;
-    public float attackCooldown = 5f; // Adjust this value to control the attack cooldown
+    public float attackCooldown = 20f; // Adjust this value to control the attack cooldown
 
     Transform player;
     Rigidbody2D rb;
@@ -37,11 +37,12 @@ public class Boss_Run : StateMachineBehaviour
         // Check if it's time for the boss to attack based on the cooldown
         if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
         {
+            Debug.Log("WE LITTY");
             animator.SetTrigger("Attack");
             audioManager.PlaySFX(audioManager.fantasyBossAttack);
             hasAttacked = true; // Set the flag to true to prevent continuous attacks
             nextAttackTime = Time.time + attackCooldown; // Set the next attack time
-         
+
         }
         // Update the nextAttackTime if the boss hasn't attacked yet
         if (hasAttacked)
