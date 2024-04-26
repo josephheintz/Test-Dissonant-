@@ -21,7 +21,7 @@ public class Skeleton : Enemy
         {
             animator.SetBool("StillAlive", false);
             animator.SetTrigger("Fall");
-            audioManager.PlaySFX(audioManager.skeletonDeath);
+            audioManager.PlayMSFX(audioManager.skeletonDeath);
             StartCoroutine(DestroyAfterDelay());
         }
     }
@@ -31,7 +31,7 @@ public class Skeleton : Enemy
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
 
         animator.SetTrigger("TakeDamage");
-        audioManager.PlaySFX(audioManager.skeletonDamage);
+        audioManager.PlayMSFX(audioManager.skeletonDamage);
     }
 
     public void Die()

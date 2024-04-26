@@ -38,7 +38,7 @@ public class Boss_Run : StateMachineBehaviour
         if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
-            audioManager.PlaySFX(audioManager.fantasyBossAttack);
+            audioManager.PlayMSFX(audioManager.fantasyBossAttack);
             hasAttacked = true; // Set the flag to true to prevent continuous attacks
             nextAttackTime = Time.time + attackCooldown; // Set the next attack time
          
