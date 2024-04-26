@@ -6947,6 +6947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telea: 000000000000000000000000000000000000000000
+  bosses: 0000000000000000
 --- !u!114 &1490228661
 MonoBehaviour:
   m_ObjectHideFlags: 0

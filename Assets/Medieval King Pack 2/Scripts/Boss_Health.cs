@@ -5,12 +5,16 @@ using UnityEngine;
 public class BossHealth : Enemy
 {
     AudioManager audioManager;
+    private GameObject levelManager; // the Managers system
+    [SerializeField] private int bossIndex; // the boss place in the boss counter
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         rb.gravityScale = 12f;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager");
     }
 
     // Update is called once per frame
@@ -19,6 +23,7 @@ public class BossHealth : Enemy
         base.Update();
         if (health <= 0)
         {
+            levelManager.GetComponent<TeleportTracker>().bosses[bossIndex] = true;
             animator.SetBool("StillAlive", false);
             animator.SetTrigger("Fall");
             audioManager.PlaySFX(audioManager.fantasyBossDeath);
