@@ -111,7 +111,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (scene.name == "FireFall")
         {
-            musicSource.clip = dockingBayMusic;
+            musicSource.clip = fireFallMusic;
             musicSource.Play();
         }
         else if (scene.name == "LiveingRuin")

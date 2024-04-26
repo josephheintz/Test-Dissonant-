@@ -1374,6 +1374,10 @@ MonoBehaviour:
   AICoreMusic: {fileID: 8300000, guid: 42088c686d43445edba06281e324ee8d, type: 3}
   hiveMusic: {fileID: 8300000, guid: 1ecbc4ca893514424b3b391184d00869, type: 3}
   reactorMusic: {fileID: 8300000, guid: aad7a7fba16964d45be7c4ebe62a3ae1, type: 3}
+  fireFallMusic: {fileID: 8300000, guid: 1aa194c616e923441ba9926f6947ebfa, type: 3}
+  livingRuinMusic: {fileID: 8300000, guid: 1fe8ddb5ba37a824fa018085eb0fa78a, type: 3}
+  theKingMusic: {fileID: 8300000, guid: 48ba0d2bf4ba0d441b19627ca36bf913, type: 3}
+  theRightHandMusic: {fileID: 8300000, guid: 1aa194c616e923441ba9926f6947ebfa, type: 3}
   playerJump: {fileID: 8300000, guid: 6aeefb601c305f64487cebdfacae5b6c, type: 3}
   playerAttack: {fileID: 8300000, guid: 56703418e3aed4c47a5f6622816b8e41, type: 3}
   playerTakeDamage: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
