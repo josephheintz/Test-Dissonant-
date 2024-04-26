@@ -21,7 +21,7 @@ public class BossHealth : Enemy
         {
             animator.SetBool("StillAlive", false);
             animator.SetTrigger("Fall");
-            audioManager.PlaySFX(audioManager.bossDeath);
+            audioManager.PlaySFX(audioManager.fantasyBossDeath);
             StartCoroutine(DestroyAfterDelay());
         }
     }
@@ -31,7 +31,7 @@ public class BossHealth : Enemy
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
         
         animator.SetTrigger("TakeDamage");
-        audioManager.PlaySFX(audioManager.bossDamage);
+        audioManager.PlaySFX(audioManager.fantasyBossDamage);
     }
 
     public void Die()
