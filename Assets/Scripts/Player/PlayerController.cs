@@ -455,6 +455,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator Death()
+    {
+        pState.alive = false;
+        Time.timeScale = 1f;
+        anim.SetTrigger("Death");
+
+        yield return new WaitForSeconds(1.1f);
+    }
+
     void Heal()
     {
         if(Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing)
