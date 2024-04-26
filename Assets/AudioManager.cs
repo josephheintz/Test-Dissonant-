@@ -11,7 +11,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("---------------Music-----------------")]
     public AudioClip menuMusic;
-    public AudioClip fantasyMusic;
+    public AudioClip OuterGardenMusic;
+    public AudioClip treeTopMusic;
     public AudioClip hubMusic;
     public AudioClip hub1Music;
     [Header("--------------Player Sounds---------------")]
@@ -49,6 +50,11 @@ public class AudioManager : MonoBehaviour
         else if (scene.name == "Hub1")
         {
             musicSource.clip = hub1Music;
+            musicSource.Play();
+        }
+        else if (scene.name == "OuterGarden")
+        {
+            musicSource.clip = OuterGardenMusic;
             musicSource.Play();
         }
     }
