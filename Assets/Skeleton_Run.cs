@@ -4,7 +4,8 @@ public class Skeleton_Run : StateMachineBehaviour
 {
     public float speed = 2.5f;
     public float attackRange = 3f;
-    public float attackCooldown = 20f; // Adjust this value to control the attack cooldown
+    public float attackCooldown = 4f; // Adjust this value to control the attack cooldown
+    public float maxRange = 5f; // Maximum range for the mob's movement towards the enemy
 
     Transform player;
     Rigidbody2D rb;
@@ -30,9 +31,13 @@ public class Skeleton_Run : StateMachineBehaviour
         boss.LookAtPlayer();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
-        rb.MovePosition(newPos);
+        float distanceToPlayer = Vector2.Distance(rb.position, player.position);
+        if (distanceToPlayer <= maxRange)
+        {
+            Vector2 target = new Vector2(player.position.x, rb.position.y);
+            Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+            rb.MovePosition(newPos);
+        }
 
         // Check if it's time for the boss to attack based on the cooldown
         if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
