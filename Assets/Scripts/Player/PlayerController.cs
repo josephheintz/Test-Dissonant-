@@ -217,12 +217,14 @@ public class PlayerController : MonoBehaviour
     {
         if (xAxis < 0)
         {
-            transform.localScale = new Vector2(-4, transform.localScale.y);
+            Vector3 rotator = new Vector3(transform.rotation.x,180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
             pState.lookingRight = false;
         }
         else if (xAxis > 0)
         {
-            transform.localScale = new Vector2(4, transform.localScale.y);
+            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
             pState.lookingRight = true;
         }
     }

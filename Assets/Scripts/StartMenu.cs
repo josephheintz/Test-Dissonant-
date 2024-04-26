@@ -34,7 +34,7 @@ public class StartMenu : MonoBehaviour
         ReturnJump.JumpToStart();
     }
 
-    public void LoudGame(){
+    public void LoadGame(){
         uiManager.GetComponent<GamePlayUI>().isInMainMenu = false;
         ReturnJump.Jump();
         PersistenceDataManager.instance.LoadGame();
