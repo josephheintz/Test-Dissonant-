@@ -42,9 +42,8 @@ public class Skeleton_Run : StateMachineBehaviour
         // Check if it's time for the boss to attack based on the cooldown
         if (!hasAttacked && Time.time >= nextAttackTime && Vector2.Distance(player.position, rb.position) <= attackRange)
         {
-            Debug.Log("WE LITTY");
             animator.SetTrigger("Attack");
-            audioManager.PlaySFX(audioManager.fantasyBossAttack);
+            audioManager.PlaySFX(audioManager.skeletonAttack);
             hasAttacked = true; // Set the flag to true to prevent continuous attacks
             nextAttackTime = Time.time + attackCooldown; // Set the next attack time
 

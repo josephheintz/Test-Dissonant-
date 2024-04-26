@@ -7,7 +7,9 @@ public class AudioManager : MonoBehaviour
 {
     [Header("---------------Audio Source---------------")]
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sfxSource;
+    [SerializeField] AudioSource playerSFXSource;
+    [SerializeField] AudioSource WolrdSFXSource;
+    [SerializeField] AudioSource mobSFXSource;
 
     [Header("---------------Music-----------------")]
     public AudioClip menuMusic;
@@ -47,6 +49,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip fantasyBossDamage;
     public AudioClip fantasyBossAttack;
     public AudioClip fantasyBossDeath;
+    public AudioClip skeletonDamage;
+    public AudioClip skeletonAttack;
+    public AudioClip skeletonDeath;
 
     void Start()
     {
