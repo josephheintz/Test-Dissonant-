@@ -27,7 +27,6 @@ public class Slime : Enemy
         {
             animator.SetBool("StillAlive", false);
             animator.SetTrigger("Fall");
-            audioManager.PlayMSFX(audioManager.slimeDeath);
             StartCoroutine(DestroyAfterDelay());
         }
     }
