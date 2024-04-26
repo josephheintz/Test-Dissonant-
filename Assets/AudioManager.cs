@@ -27,6 +27,9 @@ public class AudioManager : MonoBehaviour
     [Header("--------------Mob Sounds---------------")]
     public AudioClip slimeTakeDamage;
     public AudioClip slimeDeath;
+    public AudioClip fantasyBossDamage;
+    public AudioClip fantasyBossAttack;
+    public AudioClip fantasyBossDeath;
 
     void Start()
     {
