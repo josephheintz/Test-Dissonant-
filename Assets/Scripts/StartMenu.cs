@@ -41,7 +41,7 @@ public class StartMenu : MonoBehaviour
     }
 
     public void Credits(){
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
     }
 
     public void QuitGame(){
