@@ -8,6 +8,7 @@ public class BossHealth : Enemy
     private GameObject levelManager; // the Managers system
     [SerializeField] private int bossIndex; // the boss place in the boss counter
 
+
     // Start is called before the first frame update
     protected override void Start()
     {
