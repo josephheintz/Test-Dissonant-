@@ -801,7 +801,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 311792091}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: LoudGame
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

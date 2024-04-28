@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="52000f1f-4aa7-4b11-8a6e-fb0e4360271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Medieval King Pack 2/Scripts/Boss_Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Medieval King Pack 2/Scripts/Boss_Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Screens/StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Hell/FireFall.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Hell/FireFall.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Worlds/Sci-Fi/Reactor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Worlds/Sci-Fi/Reactor.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Screens/MainScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Screens/MainScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Credits.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Credits.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HeartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HeartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReturnJump.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/Saver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveScripts/Saver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

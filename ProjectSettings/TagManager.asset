@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Boss
   - Audio
+  - HealthUI
   layers:
   - Default
   - TransparentFX

@@ -12,10 +12,12 @@ public class ReturnJump : MonoBehaviour
     private GameObject player; // Prefab of the player object
     [SerializeField] public int TelaIndex; //
     private GameObject levelManager; // the Managers system
+    private static GameObject healthUI; // the Managers system
 
     public void Start()
     {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager");
+        healthUI = GameObject.FindGameObjectWithTag("HealthUI");
         levelManager.GetComponent<TeleportTracker>().telea[TelaIndex] = true;
         StartCoroutine(Fade());
     }
@@ -38,6 +40,8 @@ public class ReturnJump : MonoBehaviour
     public static void Jump()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().health = player.GetComponent<PlayerController>().maxHealth;
+        if(healthUI != null) healthUI.GetComponent<HeartController>().SetFilledHearts();
         SceneManager.LoadScene(1);
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         player.transform.position = new Vector2(15, 2);

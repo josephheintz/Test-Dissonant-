@@ -8,7 +8,7 @@ public class Credits : MonoBehaviour
 {
     public void BackToStart()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6);
     }
 
 }

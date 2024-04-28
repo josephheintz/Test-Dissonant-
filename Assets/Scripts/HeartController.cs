@@ -24,11 +24,6 @@ public class HeartController : MonoBehaviour
         UpdateHeartsHUD();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void SetHeartContainers()
     {
@@ -45,7 +40,7 @@ public class HeartController : MonoBehaviour
         }
     }
 
-    void SetFilledHearts()
+    public void SetFilledHearts()
     {
         for (int i = 0; i < player.maxHealth; i++)
         {

@@ -90,7 +90,7 @@ public class GamePlayUI : MonoBehaviour
 
     // Quit the game
     void QuitGame(){
-        SceneManager.LoadScene(7); // Load the main screen scene
+        SceneManager.LoadScene(6); // Load the main screen scene
     }
 
     // Called when a scene is loaded
