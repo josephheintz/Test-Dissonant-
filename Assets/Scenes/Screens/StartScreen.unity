@@ -1527,6 +1527,9 @@ MonoBehaviour:
   skeletonDamage: {fileID: 8300000, guid: 32b2a2d4cc24b644aa82dd931fddb620, type: 3}
   skeletonAttack: {fileID: 8300000, guid: 13182107f288fdc47a11f9216c8f062b, type: 3}
   skeletonDeath: {fileID: 8300000, guid: 60f96e26f2fa7a84ea0db024fce526a8, type: 3}
+  cultistDamage: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
+  cultistAttack: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+  cultistDeath: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
 --- !u!4 &251519729
 Transform:
   m_ObjectHideFlags: 0

@@ -52,6 +52,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip skeletonDamage;
     public AudioClip skeletonAttack;
     public AudioClip skeletonDeath;
+    public AudioClip cultistDamage;
+    public AudioClip cultistAttack;
+    public AudioClip cultistDeath;
 
     void Start()
     {
