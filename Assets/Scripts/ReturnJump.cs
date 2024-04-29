@@ -13,12 +13,17 @@ public class ReturnJump : MonoBehaviour
     [SerializeField] public int TelaIndex; //
     private GameObject levelManager; // the Managers system
     private static GameObject healthUI; // the Managers system
+    private bool victory = true;
 
     public void Start()
     {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager");
         healthUI = GameObject.FindGameObjectWithTag("HealthUI");
         levelManager.GetComponent<TeleportTracker>().telea[TelaIndex] = true;
+        for(int i = 0; i < levelManager.GetComponent<TeleportTracker>().bosses.Length; i++){
+            if(levelManager.GetComponent<TeleportTracker>().bosses[i] != true) victory = false;
+        }
+        if(victory == true) SceneManager.LoadScene(0);
         StartCoroutine(Fade());
     }
 
