@@ -1168,13 +1168,13 @@ MonoBehaviour:
   canDash: 0
   canDoubleJump: 0
   manaStorage: {fileID: 0}
-  mana: 0
-  manaDrainSpeed: 0
-  manaGain: 0
-  manaSpellCost: 0.3
+  mana: 1
+  manaDrainSpeed: 0.2
+  manaGain: 0.2
+  manaSpellCost: 0.2
   timeBetweenCast: 0.5
-  spellDamage: 0
-  downSpellThunderstrike: {fileID: 0}
+  spellDamage: 5
+  downSpellThunderstrike: {fileID: 1907005722}
   pState: {fileID: 0}
 --- !u!50 &173341932
 Rigidbody2D:
@@ -5134,7 +5134,7 @@ GameObject:
   - component: {fileID: 1099770747}
   - component: {fileID: 1099770746}
   m_Layer: 5
-  m_Name: HealthUI
+  m_Name: PlayerUI
   m_TagString: HealthUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
