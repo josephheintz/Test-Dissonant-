@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private float followSpeed = 0.1f;
+    public Transform target; // The target object to follow
+    public float smoothSpeed = 0.125f; // The smoothness of camera movement
 
-    [SerializeField] private Vector3 offset;
-
-    // Start is called before the first frame update
-    void Start()
+    void FixedUpdate()
     {
-        
-    }
+        if (target != null)
+        {
+            // Calculate the desired position for the camera
+            Vector3 desiredPosition = target.position;
+            desiredPosition.z = transform.position.z;
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = Vector3.Lerp(transform.position, PlayerController.Instance.transform.position + offset, followSpeed);
+            // Smoothly move the camera towards the desired position
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothedPosition;
+        }
     }
 }
