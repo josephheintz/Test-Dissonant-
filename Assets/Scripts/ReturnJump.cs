@@ -23,7 +23,7 @@ public class ReturnJump : MonoBehaviour
         for(int i = 0; i < levelManager.GetComponent<TeleportTracker>().bosses.Length; i++){
             if(levelManager.GetComponent<TeleportTracker>().bosses[i] != true) victory = false;
         }
-        if(victory == true) SceneManager.LoadScene(0);
+        if(victory == true) SceneManager.LoadScene(24);
         StartCoroutine(Fade());
     }
 

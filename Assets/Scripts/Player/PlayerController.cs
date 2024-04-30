@@ -464,6 +464,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     void Heal()
     {
         if(Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing)

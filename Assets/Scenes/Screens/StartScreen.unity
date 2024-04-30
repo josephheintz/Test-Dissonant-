@@ -7244,6 +7244,7 @@ MonoBehaviour:
   inventory: {fileID: 1074406090}
   mainCamera: {fileID: 975646502}
   eventSystem: {fileID: 754012881}
+  healthUI: {fileID: 1099770744}
 --- !u!1 &1491809322
 GameObject:
   m_ObjectHideFlags: 0

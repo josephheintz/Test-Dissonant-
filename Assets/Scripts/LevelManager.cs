@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public GameObject inventory;
     [SerializeField] public GameObject mainCamera;
     [SerializeField] public GameObject eventSystem;
+    [SerializeField] public GameObject healthUI;
 
     void Awake()
     {
@@ -37,6 +38,14 @@ public class LevelManager : MonoBehaviour
             // Subscribe to the sceneLoaded event
             SceneManager.sceneLoaded += OnSceneLoaded;
             Time.timeScale = 0f;
+        }
+
+        void Update(){
+            if(player.GetComponent<PlayerController>().Health <= 0) {
+            SceneManager.LoadScene(23);
+            player.GetComponent<PlayerController>().Health = player.GetComponent<PlayerController>().maxHealth;
+            healthUI.GetComponent<HeartController>().SetFilledHearts();
+            }
         }
 
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)

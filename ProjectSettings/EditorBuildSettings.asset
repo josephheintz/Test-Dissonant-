@@ -74,4 +74,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Worlds/Hell/TheKing.unity
     guid: 02f060097f7d34f81bfbff4b2fe1f972
+  - enabled: 1
+    path: Assets/Scenes/Screens/YouLose.unity
+    guid: f84d1bab74b124473a1b92eff9cafe1d
+  - enabled: 1
+    path: Assets/Scenes/Screens/YouWin.unity
+    guid: c49a519c9327b462cb28ea2aebf39c5b
   m_configObjects: {}
