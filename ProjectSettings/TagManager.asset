@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - Audio
   - HealthUI
+  - PlayerUI
   layers:
   - Default
   - TransparentFX
