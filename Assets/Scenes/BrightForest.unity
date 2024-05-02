@@ -757,6 +757,36 @@ MonoBehaviour:
   dashSpeed: 20
   dashTime: 0.2
   dashCooldown: 0.35
+  SideAttackTransform: {fileID: 0}
+  SideAttackArea: {x: 0, y: 0}
+  UpAttackTransform: {fileID: 0}
+  UpAttackArea: {x: 0, y: 0}
+  DownAttackTransform: {fileID: 0}
+  DownAttackArea: {x: 0, y: 0}
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 0
+  slashEffect: {fileID: 0}
+  recoilXSteps: 5
+  recoilYSteps: 5
+  recoilXSpeed: 100
+  recoilYSpeed: 100
+  health: 0
+  maxHealth: 0
+  hitFlashSpeed: 0
+  timeToHeal: 0
+  canDash: 0
+  canDoubleJump: 0
+  manaStorage: {fileID: 0}
+  mana: 0
+  manaDrainSpeed: 0
+  manaGain: 0
+  manaSpellCost: 0.3
+  timeBetweenCast: 0.5
+  spellDamage: 0
+  downSpellThunderstrike: {fileID: 0}
+  pState: {fileID: 0}
 --- !u!95 &308010452
 Animator:
   serializedVersion: 5
@@ -792,6 +822,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumping: 0
   dashing: 0
+  recoilingX: 0
+  recoilingY: 0
+  lookingRight: 0
+  invincible: 0
+  healing: 0
+  casting: 0
 --- !u!1 &440956672
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,15 +983,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503974341}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.73808, y: 0.99862564, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.427161, y: -7.9046087, z: 5.591467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 253344007}
   - {fileID: 440956673}
   - {fileID: 250690270}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 582486178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1064,6 +1100,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 10
   offset: {x: 0, y: 1, z: -20}
+--- !u!1 &582486177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582486178}
+  m_Layer: 0
+  m_Name: Forest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &582486178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582486177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.165241, y: 8.9032345, z: -5.591467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 503974342}
+  - {fileID: 961078853}
+  - {fileID: 1859619727}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611620367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3dd886c6aad8a409ef4e1799c7e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartsParent: {fileID: 0}
+  heartContainerPrefab: {fileID: 0}
 --- !u!114 &851184250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,8 +1911,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961078852}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.73808, y: 0.99862564, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.427161, y: -7.9046087, z: 5.591467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1849,7 +1921,7 @@ Transform:
   - {fileID: 708266883}
   - {fileID: 901007116}
   - {fileID: 732322034}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 582486178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &965997532
 GameObject:
@@ -2035,7 +2107,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1068984960
@@ -2131,6 +2203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1303fc24c0d952544afe5153808be2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  hitForce: 0
 --- !u!1 &1237622422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2723,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1661397479
@@ -2679,6 +2753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d5e7bcc99dcef4d82260e6c7764d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  recoilLength: 0
+  recoilFactor: 0
+  isRecoiling: 0
+  player: {fileID: 0}
+  speed: 0
+  damage: 0
 --- !u!61 &1661397481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2909,15 +2990,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859619726}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.73808, y: 0.99862564, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.427161, y: -7.9046087, z: 5.591467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1796315988}
   - {fileID: 21340066}
   - {fileID: 1595514554}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 582486178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889557149
 GameObject:
@@ -3080,6 +3161,4 @@ SceneRoots:
   - {fileID: 1661397479}
   - {fileID: 851184253}
   - {fileID: 2059706032}
-  - {fileID: 503974342}
-  - {fileID: 961078853}
-  - {fileID: 1859619727}
+  - {fileID: 582486178}
