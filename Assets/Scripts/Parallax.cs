@@ -19,6 +19,7 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
         float temp = (cam.transform.position.x * (1 - parallaxEffect));
         float dist = cam.transform.position.x * parallaxEffect;
 
