@@ -1296,7 +1296,7 @@ MonoBehaviour:
   hitFlashSpeed: 0
   timeToHeal: 0
   canDash: 0
-  canDoubleJump: 0
+  canDoubleJump: 1
   manaStorage: {fileID: 1607840101}
   mana: 1
   manaDrainSpeed: 0.2
