@@ -1159,6 +1159,14 @@ PrefabInstance:
       value: FantasyBoss
       objectReference: {fileID: 0}
     - target: {fileID: 2417803936941681584, guid: cf3d8560ad3a34c0a8d505567e6ec941, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417803936941681584, guid: cf3d8560ad3a34c0a8d505567e6ec941, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417803936941681584, guid: cf3d8560ad3a34c0a8d505567e6ec941, type: 3}
       propertyPath: bossIndex
       value: 6
       objectReference: {fileID: 0}
